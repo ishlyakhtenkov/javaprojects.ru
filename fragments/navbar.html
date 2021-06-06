@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark py-1">
+	<div class="container">
+		<a class="navbar-brand font-weight-bold" href="https://www.javaprojects.ru">
+			<img src="img/java.png" width="30" height="30" class="d-inline-block mb-3" alt="">
+			Java Projects
+		</a>
+				
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Проекты
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="aggregator.html">Агрегатор ключевых навыков</a>
+					<a class="dropdown-item" href="training-management.html">Менеджмент тренировок</a>
+					<a class="dropdown-item" href="onlinetesting.html">Система онлайн тестирования</a>
+					<a class="dropdown-item" href="calories-management.html">Система подсчета калорий</a>
+					<a class="dropdown-item" href="votingsystem.html">Система голосования за рестораны</a>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="$('#collapsed-chevron').toggleClass('fa-rotate-180')">
+					О сайте <i class="fas fa-angle-down" id="collapsed-chevron"></i>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+</nav>
+
+<script src="js/image-modal.js" defer></script>
+
+
+<div class="container">
+	<div class="collapse mb-3 mt-3" id="collapseExample">
+		<div class="card card-body bg-light">
+			<div class="row align-items-center">
+				<div class="col-9">
+					<h4>Добро пожаловать на сайт Java Projects!</h4>
+					<h4>Меня зовут Шляхтенков Игорь.</h4>
+					<h4>На страницах сайта представлены мои Java хобби-проекты.</h4>
+					<h4>Каждый проект можно протестировать в реальном времени.</h4>
+					<h4>Также Вы можете ознакомиться с исходным кодом проектов, перейдя на GitHub по приложенным ссылкам.</h4>
+				</div>
+				<div class="col-3">
+					<img id="myImg" src="img/shlyakhtenkov.jpeg" alt="Igor Shlyakhtenkov" width="67%" class="float-right">
+					<!-- The Modal -->
+					<div id="myModal" class="modal">
+						<!-- The Close Button -->
+						<span class="close">&times;</span>
+						<!-- Modal Content (The Image) -->
+						<img class="modal-content" id="img01">
+						<!-- Modal Caption (Image Text) -->
+						<div id="caption"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

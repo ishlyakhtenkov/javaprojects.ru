@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+
+		<title>Shlyakhtenkov Projects</title>
+	</head>
+	<body>
+	
+		<nav class="navbar sticky-top navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="https://www.javaprojects.ru">
+					<img src="img/java.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					Shlyakhtenkov Projects
+				</a>
+			</div>
+		</nav>
+		<br>
+				
+		<div class="container">
+			<div class="p-3 mb-2 bg-secondary text-white">
+				<h1><strong>Система онлайн тестирования</strong></h1>
+			</div>
+				
+				<a href="/onlinetesting" target="_blank">Протестировать приложение</a>
+				<br>
+				<a href="https://github.com/igar15/onlinetesting">Source code на Github</a>
+				<br><br>
+
+				Данное приложение позволяет пройти онлайн тест по выбранной тематике.<br><br>
+				<div class="row">
+					<div class="col-6">
+						Пользователь выбирает тему, по которой он хочет пройти тест.<br>
+						После этого программа загружает в память список вопросов, по выбранной теме. Данный список сохраняется в сессии пользователя.<br>
+						Пользователь поочередно отвечает на вопросы теста, вводя ответ в текстовое поле. В случае неверного ответа на вопрос информация об этом сохраняется в сессии пользователя.<br>
+						Пользователь может в любой момент прервать прохождение теста и перейти к результатам, нажав кнопку "Interrupt test".
+					</div>
+					<div class="col-6">
+						<img src="img/onlinetesting-home.png" class="img-fluid">
+					</div>
+				</div>
+				
+				<img src="img/onlinetesting-question.png" class="img-fluid">
+				<br><br>
+				
+				После ответов на все вопросы теста или нажатия кнопки "Interrupt test" программа представляет пользователю результаты выполнения теста.<br>
+				Вся необходимая для формирования результатов информация берется из сессии пользователя.<br>
+				В случае если пользователь давал неверные ответы, программа выводит список соответствующих вопросов, а также отображает правильный ответ на вопрос и ответ, данный пользователем.<br><br>
+				
+				<img src="img/onlinetesting-result.png" class="img-fluid">
+
+		</div> 
+		
+		<footer class="footer">
+			<div class="container">
+				<hr>
+				<span class="text-muted">© 2021 Igor Shlyakhtenkov</span>
+				<br>
+				<a href="mailto:ig.shlyakhtenkov@gmail.com">ig.shlyakhtenkov@gmail.com</a>
+				<br>
+				<a href="skype:f38e5677b17d7918">igor.shlyakhtenkov</a>
+				<br>
+				<a href="https://github.com/igar15/">аккаунт GitHub</a><br>
+				<br><br>
+			</div>
+		</footer>
+	</body>
+</html>
