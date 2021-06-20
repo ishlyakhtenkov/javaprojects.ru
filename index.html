@@ -2,11 +2,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Меня зовут Шляхтенков Игорь. На страницах сайта представлены мои Java хобби-проекты. Вы можете протестировать каждый проект в реальном времени."/>
 		<title>Java Projects</title>
 		
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/all.css">
 		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
 		
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/popper.min.js"></script>	
@@ -14,7 +16,7 @@
 		<script src="js/include.js"></script>
 		<script src="js/about.js"></script>
 	</head>
-	<body>
+	<body class="d-flex flex-column min-vh-100">
 		<div class="sticky-top">
 			<div id="navbarContent"></div>
 		</div>
@@ -30,6 +32,10 @@
 				<p><a class="btn btn-secondary" href="aggregator.html" role="button">Подробнее &raquo;</a></p>
 			  </div>
 			  <div class="col-md-4">
+				<h2>Система учета выдачи документов</h2>
+				<p>Используется работниками архива копий технической документации для учета выданных разработчикам альбомов конструкторской документации.
+					Позволяет отслеживать текущего держателя альбома.</p>
+				<p><a class="btn btn-secondary" href="album-accounting.html" role="button">Подробнее &raquo;</a></p>
 			  </div>
 			  <div class="col-md-4">
 				<h2>Менеджмент тренировок</h2>
@@ -61,6 +67,8 @@
 			</div>
 		</div> 
 		
-		<div id="footerContent"></div>		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
 	</body>
 </html>
