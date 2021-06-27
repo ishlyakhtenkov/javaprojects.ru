@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Данное приложение используется для учета альбомов технической документации, хранящихся в архиве копий отдела технической документации."/>
+		<title>Java Projects</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>	
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/include.js"></script>
+		<script src="js/about.js"></script>
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="sticky-top">
+			<div id="navbarContent"></div>
+		</div>
+		
+		<div id="aboutContent"></div>
+				
+		<div class="container mt-4">
+			<div class="p-3 mb-2 bg-secondary text-white">
+				<h1><strong>Система учета документов</strong></h1>
+			</div>
+				
+				<a href="/albumaccounting" target="_blank">Протестировать приложение</a>
+				<br>
+				<a href="https://github.com/igar15/albumaccounting">Source code на Github</a>
+				<br><br>
+
+				Данное приложение используется для учета и отслеживания местонахождения альбомов технической документации архива копий отдела технической документации.<br><br>
+				<div class="row">
+					<div class="col-6">
+						Пользователь выбирает тему, по которой он хочет пройти тест.<br>
+						После этого программа загружает в память список вопросов, по выбранной теме. Данный список сохраняется в сессии пользователя.<br>
+						Пользователь поочередно отвечает на вопросы теста, вводя ответ в текстовое поле. В случае неверного ответа на вопрос информация об этом сохраняется в сессии пользователя.<br>
+						Пользователь может в любой момент прервать прохождение теста и перейти к результатам, нажав кнопку "Interrupt test".
+					</div>
+					<div class="col-6">
+						<img src="img/onlinetesting-home.png" class="img-fluid">
+					</div>
+				</div>
+				
+				<img src="img/onlinetesting-question.png" class="img-fluid">
+				<br><br>
+				
+				После ответов на все вопросы теста или нажатия кнопки "Interrupt test" программа представляет пользователю результаты выполнения теста.<br>
+				Вся необходимая для формирования результатов информация берется из сессии пользователя.<br>
+				В случае если пользователь давал неверные ответы, программа выводит список соответствующих вопросов, а также отображает правильный ответ на вопрос и ответ, данный пользователем.<br><br>
+				
+				<img src="img/onlinetesting-result.png" class="img-fluid">
+
+		</div> 
+		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
+	</body>
+</html>
