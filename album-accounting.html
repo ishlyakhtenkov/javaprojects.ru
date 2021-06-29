@@ -2,8 +2,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение используется для учета альбомов технической документации, хранящихся в архиве копий отдела технической документации."/>
-		<title>Java Projects</title>
+		<meta name="description" content="Данное приложение используется для учета альбомов технической документации, поступающих в архив на хранение."/>
+		<title>Album Accounting - Java Projects</title>
 		
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/all.css">
@@ -24,39 +24,132 @@
 		<div id="aboutContent"></div>
 				
 		<div class="container mt-4">
-			<div class="p-3 mb-2 bg-secondary text-white">
-				<h1><strong>Система учета документов</strong></h1>
+			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3">
+				Система учета документов
 			</div>
-				
-				<a href="/albumaccounting" target="_blank">Протестировать приложение</a>
-				<br>
-				<a href="https://github.com/igar15/albumaccounting">Source code на Github</a>
-				<br><br>
-
-				Данное приложение используется для учета и отслеживания местонахождения альбомов технической документации архива копий отдела технической документации.<br><br>
-				<div class="row">
-					<div class="col-6">
-						Пользователь выбирает тему, по которой он хочет пройти тест.<br>
-						После этого программа загружает в память список вопросов, по выбранной теме. Данный список сохраняется в сессии пользователя.<br>
-						Пользователь поочередно отвечает на вопросы теста, вводя ответ в текстовое поле. В случае неверного ответа на вопрос информация об этом сохраняется в сессии пользователя.<br>
-						Пользователь может в любой момент прервать прохождение теста и перейти к результатам, нажав кнопку "Interrupt test".
-					</div>
-					<div class="col-6">
-						<img src="img/onlinetesting-home.png" class="img-fluid">
-					</div>
+			
+			<div class="mb-3">
+				<a href="/albumaccounting" target="_blank">Протестировать приложение</a></br>
+				<a href="https://github.com/igar15/albumaccounting">Source code на Github (backend)</a></br>
+				<a href="https://github.com/igar15/angular-albumaccounting">Source code на Github (frontend)</a>
+			</div>
+							
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr align="center">
+						<th style="width: 75%">Backend</th>
+						<th style="width: 25%">Frontend</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr align="center">
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-4">
+									<p>Maven</p>
+									<p>Spring Boot</p>
+									<p>Spring MVC</p>
+								</div>
+								<div class="col-4">
+									<p>Spring Data JPA (Hibernate)</p>
+									<p>Spring Security</p>
+									<p>REST (Jackson)</p>
+								</div>
+								<div class="col-4">
+									<p>JSON Web Token</p>
+									<p>JUnit 5</p>
+									<p>OpenAPI 3</p>
+								</div>
+							</div>
+						</td>
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-12">
+									<p>Angular 2</p>
+									<p>Bootstrap 4</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>				
+			</table>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описание приложения</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данное приложение используется работниками архива для учета альбомов конструкторской документации, поступающих в архив на хранение, 
+				и выдаваемых разработчикам для личного пользования, а также позволяет определять текущее местонахождение требующегося альбома.</br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Примечание. Под альбомом в данном случае понимается некоторое количество взаимосвязанных конструкторских документов, распечатанных на бумаге и переплетенных в книгу. 
+				Каждый альбом имеет децимальный номер, равный децимальному номеру главного документа в альбоме, а также "штамп"- специальное обозначение, 
+				определяющее производственную область применения альбома.</i>
+			</p>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В приложении используется три вида пользователей: анонимные пользователи, работники архива и администраторы.</br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Анонимные пользователи</strong> могут просматривать информацию об имеющихся в архиве альбомах конструкторской документации, а также осуществлять поиск 
+				альбомов по их децимальным номерам. Поддерживается поиск альбомов по имени текущего держателя, что удобно использовать при необходимости проверки 
+				какие альбомы числятся за тем или иным разработчиком.</br>
+			</p>
+			<img src="img/album-accounting/anonimous-albums.png" class="img-fluid img-thumbnail mb-3">			
+			<div class="row mb-3">
+				<div class="col-8">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Работники архива</strong> кроме возможности просмотра информации об альбомах имеют право добавлять новые альбомы, а также редактировать и удалять информацию об уже имеющихся, 
+					в том числе указывать отдел и имя разработчика, которому был выдан альбом.</br>
+					<img src="img/album-accounting/archive-worker-albums.png" class="img-fluid img-thumbnail">			
 				</div>
-				
-				<img src="img/onlinetesting-question.png" class="img-fluid">
-				<br><br>
-				
-				После ответов на все вопросы теста или нажатия кнопки "Interrupt test" программа представляет пользователю результаты выполнения теста.<br>
-				Вся необходимая для формирования результатов информация берется из сессии пользователя.<br>
-				В случае если пользователь давал неверные ответы, программа выводит список соответствующих вопросов, а также отображает правильный ответ на вопрос и ответ, данный пользователем.<br><br>
-				
-				<img src="img/onlinetesting-result.png" class="img-fluid">
-
+				<div class="col-4 text-right mt-auto">
+					<img src="img/album-accounting/adding-album.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Помимо действий с альбомами работники архива могут просматривать информацию о разработчиках, выбирая интересующий отдел.
+				Также им доступна возможность добавлять, редактировать и удалять информацию о разработчиках. В дальнейшем эта информация используется для выдачи им альбомов. 
+			</p>
+			<div class="row mb-3">
+				<div class="col-8">
+					<img src="img/album-accounting/employees.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 text-right">
+					<img src="img/album-accounting/editing-employee.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Администораторы</strong> имеют все права работников архива. Таже им доступна возможность просматривать информацию 
+				о пользователях приложения с опцией поиска по имени/адресу эл. почты. Администраторы могут создавать новых пользователей, назначая им соответствующие права доступа,  
+				редактировать, банить и удалять уже имеющихся. Им доступна возможность изменять пароли пользователей, что удобно использовать, если пользователь не может 
+				вспомнить свой текущий пароль.
+			</p>
+			<div class="row mb-3">
+				<div class="col-8 mt-auto">
+					<img src="img/album-accounting/users.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 text-right">
+					<img src="img/album-accounting/adding-user.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Поимо вышеперечисленного администраторы имеют возможность просматривать информацию об отделах, создавать новые отделы, 
+				а также редактировать и удалять имеющиеся.
+			</p>
+			<div class="row mb-3">
+				<div class="col-8">
+					<img src="img/album-accounting/departments.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/album-accounting/editing-department.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, а также сменить  пароль. 
+			</p>
+			<div class="row mb-2">
+				<div class="col-8">
+					<img src="img/album-accounting/profile.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/album-accounting/changing-password.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
 		</div> 
-		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
