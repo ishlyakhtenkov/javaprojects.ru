@@ -276,6 +276,11 @@ a[href$="/calories-management/swagger-ui.html"]{
     background: url(../img/swagger.png) no-repeat center left;
 }
 
+a[href$="/album-accounting"]{
+    padding-left: 20px;
+    background: url(../img/albums.png) no-repeat center left;
+}
+
 
 
 
