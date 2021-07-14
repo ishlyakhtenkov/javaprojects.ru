@@ -1,0 +1,125 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Данное приложение позволяет пользователям ежедневно голосовать за понравившийся ресторан."/>
+		<title>Restaurant Voting - Java Projects</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>	
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/include.js"></script>
+		<script src="js/about.js"></script>
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="sticky-top">
+			<div id="navbarContent"></div>
+		</div>
+		
+		<div id="aboutContent"></div>
+				
+		<div class="container mt-4">
+			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3">
+				Система голосования за рестораны
+			</div>
+			
+			<div class="mb-3">
+				<a href="/restaurant-voting" target="_blank">Протестировать приложение</a> (credentials: admin@gmail.com/admin)</br>
+				<a href="/votingsystem/swagger-ui.html">REST API Swagger документация</a></br>
+				<a href="https://github.com/igar15/votingsystem">Source code на GitHub (backend)</a></br>
+				<a href="https://github.com/igar15/angular-votingsystem">Source code на GitHub (frontend)</a>
+			</div>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr align="center">
+						<th style="width: 75%">Backend</th>
+						<th style="width: 25%">Frontend</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr align="center">
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-4">
+									<p>Maven</p>
+									<p>Spring MVC</p>
+									<p>Spring Data JPA (Hibernate)</p>
+								</div>
+								<div class="col-4">
+									<p>Spring Security</p>
+									<p>Ehcache</p>
+									<p>REST (Jackson)</p>
+								</div>
+								<div class="col-4">
+									<p>JUnit 5</p>
+									<p>OpenAPI 2</p>
+								</div>
+							</div>
+						</td>
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-12">
+									<p>Angular 2</p>
+									<p>Bootstrap 4</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>				
+			</table>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описание приложения</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данное приложение позволяет пользователям получать информацию о ресторанах и предлагающиеся в них ланч-меню дня, а также
+				один раз в сутки голосовать за понравившийся ресторан.</br>
+			</p>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В приложении используется три вида пользователей: анонимные пользователи, авторизованные пользователи и администраторы.</br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Анонимные пользователи</strong> могут получать информацию о занесенных в приложение ресторанах,
+				просматривать их ланч-меню дня, а также осуществлять поиск ресторанов по имени.</br>
+			</p>
+			<img src="img/restaurant-voting/anonimous-restaurants.png" class="img-fluid img-thumbnail mb-3">
+			<div class="row mb-3">
+				<div class="col-8 mt-auto">
+					<img src="img/restaurant-voting/anonimous-restaurant-details.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 mt-auto">
+					Кроме того анонимные пользователи могут зарегистрироваться в приложении, тем самым получая возможность голосовать за понравившийся ресторан.
+					<img src="img/restaurant-voting/register.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Авторизованные пользователи</strong> помимо возможности просмотра информации о ресторанах и их ланч-меню дня
+				могут проголосовать за понравившийся ресторан. Голосовать можно за один ресторан один раз в сутки, до 11:00 доступна возможность изменить голос, проголосовав за другой ресторан.
+			</p>
+			<img src="img/restaurant-voting/voting.png" class="img-fluid img-thumbnail mb-3">
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Администраторы</strong> имеют все возможности авторизованных пользователей. Также им доступна возможность создавать 
+				новые рестораны, редактировать информацию об уже имеющихся, удалять рестораны.
+			</p>
+			<img src="img/restaurant-voting/add-restaurant.png" class="img-fluid img-thumbnail mb-3">
+			<p>
+				Администраторы ежедневно добавляют новые ланч-меню дня для имеющихся ресторанов. Также они могут изменять/удалять блюда в ланч-меню.
+			</p>
+			<img src="img/restaurant-voting/add-dishes.png" class="img-fluid img-thumbnail mb-3">
+			<p>
+				После создания ланч-меню дня для ресторана, пользователи смогут проголосовать за него.
+			</p>
+			<img src="img/restaurant-voting/menu-created.png" class="img-fluid img-thumbnail mb-3">
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, сменить  пароль, а также удалить свой профиль.
+			</p>
+			<img src="img/restaurant-voting/profile.png" class="img-fluid img-thumbnail mb-3">
+		</div>		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
+	</body>
+</html>
