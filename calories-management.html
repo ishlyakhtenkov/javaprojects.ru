@@ -2,8 +2,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение позволяет пользователям вносить и управлять данными о приемах пищи и подсчитывать потребленные калории."/>
-		<title>Java Projects</title>
+		<meta name="description" content="Данное приложение позволяет пользователям управлять данными о приемах пищи и подсчитывать потребленные калории."/>
+		<title>Calories Management - Java Projects</title>
 		
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/all.css">
@@ -17,7 +17,6 @@
 		<script src="js/about.js"></script>
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-	
 		<div class="sticky-top">
 			<div id="navbarContent"></div>
 		</div>
@@ -25,26 +24,92 @@
 		<div id="aboutContent"></div>
 				
 		<div class="container mt-4">
-			<div class="p-3 mb-2 bg-secondary text-white">
-				<h1><strong>Система подсчета калорий</strong></h1>
+			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3">
+				Система подсчета калорий
 			</div>
-				
-				<a href="/calories-management" target="_blank">Протестировать приложение</a>
-
-				<br>
-				<a href="https://github.com/igar15/topjava">Source code на Github</a>
-				<br><br>
-
-				Java Enterprise проект с регистрацией/авторизацией и правами доступа на основе ролей (USER, ADMIN).<br>
-				Существуют два вида пользователей - администраторы и обычные пользователи.<br>
-				Администраторы могут создавать/изменять/удалять данные пользователей, а пользователи - управлять своим профилем и данными (едой).<br>
-				Взаимодействие с приложением осуществляется через UI (по AJAX) и по REST интерфейсу с базовой авторизацией.<br>
-				Возможна фильтрация еды по датам и времени.<br>
-				Цвет записи таблицы еды зависит от того, превышает ли сумма калорий за день норму (редактируемый параметр в профиле пользователя).<br>
-				Весь REST интерфейс покрывается JUnit тестами, используя Spring MVC Test и Spring Security Test.<br><br>
-				<a href="/calories-management/swagger-ui.html">Swagger документация</a> (учетная запись админа для теста API: admin@gmail.com/admin)
+			
+			<div class="mb-3">
+				<a href="/calories-management" target="_blank">Протестировать приложение</a></br>
+				<a href="/calories-management/swagger-ui.html">REST API Swagger документация</a> (credentials: admin@gmail.com/admin)</br>
+				<a href="https://github.com/igar15/caloriesmanagement">Source code на GitHub</a></br>
+			</div>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
+			<table class="table table-bordered">
+				<tbody>
+					<tr align="center">
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-3">
+									<p>Maven</p>
+									<p>Spring MVC</p>
+									<p>Spring Security</p>
+									<p>REST (Jackson)</p>
+								</div>
+								<div class="col-3">
+									<p>JPA (Hibernate)</p>
+									<p>Spring Data JPA (Hibernate)</p>
+									<p>Spring Data JDBC</p>
+									<p>Ehcache</p>
+								</div>
+								<div class="col-3">
+									<p>JUnit 5</p>
+									<p>JSP</p>
+									<p>JSTL</p>
+									<p>jQuery + plugins</p>
+								</div>
+								<div class="col-3">
+									<p>DataTables</p>
+									<p>Bootstrap 4</p>
+									<p>OpenAPI 2</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>				
+			</table>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описание приложения</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данное приложение позволяет пользователям вносить информацию об употребленной пище и количестве калорий, 
+				которое она содержит, а также следить за превышением заданной ежедневной нормы потребляемых калорий.</br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Взаимодействие с приложением осуществляется через UI (по AJAX) и по REST интерфейсу с базовой авторизацией.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В приложение добавлена поддержка интернационализации (русский/английский языки)<br>
+			</p>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В приложении используется два вида пользователей: авторизованные пользователи и администраторы.</br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Анонимные пользователи</strong> могут зарегистрироваться, тем самым получая возможность работать с приложением.</br>
+			</p>
+			<img src="img/calories-management/register.png" class="img-fluid img-thumbnail mb-3">
+			<div class="row mb-3">
+				<div class="col-4 mt-auto">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Авторизованные пользователи</strong> могут просматривать информацию о своих приемах пищи
+					с возможностью фильтрации по датам и времени, добавлять новые приемы пищи, редактировать и удалять имеющиеся.</br>
+					Цвет записи в таблице еды зависит от того, превышает ли сумма калорий за день установленную норму.</br>
+					<img src="img/calories-management/adding-meal.png" class="img-fluid img-thumbnail">
+				</div>
+				<div class="col-8 mt-auto">
+					<img src="img/calories-management/meals-table.png" class="img-fluid img-thumbnail">			
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Администраторы</strong> имеют все возможности авторизованных пользователей. Таже им доступна возможность просматривать информацию 
+				о пользователях приложения. Администраторы могут создавать новых пользователей,	редактировать, блокировать и удалять уже имеющихся. 
+				Им доступна возможность изменять пароли пользователей, что удобно использовать, если пользователь не может вспомнить свой текущий пароль.
+			</p>
+			<div class="row mb-3">
+				<div class="col-8 mt-auto">
+					<img src="img/calories-management/users-table.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 text-right">
+					<img src="img/calories-management/adding-user.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Любому авторизованному пользователю приложения доступна возможность просмотреть и изменить данные своего профиля, а также сменить  пароль. 
+			</p>
+			<img src="img/calories-management/profile.png" class="img-fluid img-thumbnail mb-3">
 		</div> 
-		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
