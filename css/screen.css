@@ -126,11 +126,6 @@ a[href$="/swagger-ui.html"]{
     background: url(../img/swagger.png) no-repeat center left;
 }
 
-a[href$="in-developing.html"]{
-    padding-left: 20px;
-    background: url(../img/stop.png) no-repeat center left;
-}
-
 a[href^="/training-management"]{
     padding-left: 20px;
     background: url(../img/training-management.png) no-repeat center left;
