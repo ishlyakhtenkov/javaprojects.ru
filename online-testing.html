@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Данное приложение позволяет проверить свои знания, пройдя тест по выбранной тематике."/>
+		<title>Online Testing - Java Projects</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>	
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/include.js"></script>
+		<script src="js/about.js"></script>
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="sticky-top">
+			<div id="navbarContent"></div>
+		</div>
+		
+		<div id="aboutContent"></div>
+				
+		<div class="container mt-4">
+			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3">
+				Система онлайн тестирования
+			</div>
+			
+			<div class="mb-3">
+				<a href="/onlinetesting" target="_blank">Протестировать приложение</a></br>
+				<a href="https://github.com/igar15/onlinetesting">Source code на GitHub</a>
+			</div>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
+			<table class="table table-bordered">
+				<tbody>
+					<tr align="center">
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-4">
+									<p>Maven</p>
+									<p>Spring Boot</p>
+								</div>
+								<div class="col-4">
+									<p>Spring MVC</p>
+									<p>Spring Data JPA (Hibernate)</p>
+								</div>
+								<div class="col-4">
+									<p>JUnit 5</p>
+									<p>Thymeleaf</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>				
+			</table>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описание приложения</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данное приложение позволяет пользователям проверить свои знания, пройдя онлайн тест по выбранной тематике. 
+			</p>
+			<div class="row mb-3">
+				<div class="col-7">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пользователю предлагается выбрать тему, по которой он хочет пройти тест, из списка предложенных тем.</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После выбора тематики теста начинается тест, где пользователю необходимо отвечать на предлагающиеся вопросы, вводя ответы на них
+					в соответствующее текстовое поле. В случае неверного ответа на вопрос информация об этом сохраняется.</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пользователь может в любой момент прервать прохождение теста и перейти к просмотру результатов, нажав кнопку "Interrupt test".
+				</div>
+				<div class="col-5 mt-auto text-right">
+					<img src="img/online-testing/select-category.png" class="img-fluid img-thumbnail">			
+				</div>
+			</div>
+			<img src="img/online-testing/question.png" class="img-fluid img-thumbnail mb-3">
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После ответов на все вопросы теста или досрочного завершения теста нажатием кнопки "Interrupt test"
+				приложение представляет пользователю результаты выполнения теста. В случае если пользователь неверно отвечал на вопросы, программа выводит список 
+				соответствующих вопросов, а также отображает правильные ответы на эти вопросы совместно с неправильными ответами, данными пользователем.
+			</p>
+			<img src="img/online-testing/result.png" class="img-fluid img-thumbnail mb-3">
+		</div> 
+		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
+	</body>
+</html>
