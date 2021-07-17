@@ -111,7 +111,7 @@ a[href$=".pdf"]{
     background: url(../img/pdf.png) no-repeat center left;
 }
 
-a[href^="/vacancyaggregator"]{
+a[href^="/skillsaggregator"]{
     padding-left: 20px;
     background: url(../img/skills.png) no-repeat center left;
 }
