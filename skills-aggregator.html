@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Данное приложение составляет список ключевых навыков для указанной пользователем профессии."/>
+		<title>Skills Aggregator - Java Projects</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>	
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/include.js"></script>
+		<script src="js/about.js"></script>
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="sticky-top">
+			<div id="navbarContent"></div>
+		</div>
+		
+		<div id="aboutContent"></div>
+				
+		<div class="container mt-4">
+			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3">
+				Агрегатор ключевых навыков
+			</div>
+			
+			<div class="mb-3">
+				<a href="/skillsaggregator" target="_blank">Протестировать приложение</a></br>
+				<a href="https://github.com/igar15/skillsaggregator">Source code на GitHub</a>
+			</div>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
+			<table class="table table-bordered">
+				<tbody>
+					<tr align="center">
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-4">
+									<p>Maven</p>
+									<p>Java Servlets API</p>
+									<p>Spring</p>
+								</div>
+								<div class="col-4">
+									<p>Spring Data JPA (Hibernate)</p>
+									<p>JSoup</p>
+									<p>JUnit 5</p>
+								</div>
+								<div class="col-4">
+									<p>JSP</p>
+									<p>JSTL</p>
+									<p>Bootstrap 4</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>				
+			</table>
+			
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Описание приложения</div>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Данное приложение составляет список ключевых навыков для указанной пользователем профессии.
+				Для каждого ключевого навыка указывается процент вакансий, требующих его знание, от общего числа проанализированных вакансий по указанной профессии.</br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Информация о вакансиях берется с портала <a href="https://hh.ru/">Head Hunters Russia</a>.				
+			</p>
+			<div class="row mb-3">
+				<div class="col-8">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Пользователь вводит название интересующей его профессии, также он может ввести название города,
+					в котором необходимо осуществлять поиск вакансий. В случае если пользователь не ввел название города, поиск вакансий будет осуществляться
+					по всем городам России.</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Доступна возможность выбрать какое количество вакансий 
+					(первые 100, 500 или 2000 из выборки <a href="https://hh.ru/">Head Hunters Russia</a>) необходимо проанализировать для сбора информации о 
+					требующихся ключевых навыках. Размер выборки существенно влияет на время составления списка ключевых навыков.</br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После анализа выборки вакансий пользователю представляется список ключевых навыков, 
+					требующихся для выбранной им профессии. Для каждого ключевого навыка из списка указывается процент вакансий, требующих его знание, 
+					от общего числа проанализированных вакансий по указанной профессии.</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Результат агрегации ключевых навыков по указанной профессии за конкретную дату сохраняется в базу данных приложения.
+				</div>
+				<div class="col-4 mt-auto text-right">
+					<img src="img/skills-aggregator/profession-form.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<img src="img/skills-aggregator/skills-page.png" class="img-fluid img-thumbnail mb-3">
+		</div> 
+		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
+	</body>
+</html>
