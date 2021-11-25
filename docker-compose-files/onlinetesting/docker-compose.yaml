@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  onlinetesting:
+    image: javaprojects/onlinetesting
+    networks:
+      - onlinetesting-network
+    ports:
+      - 80:8080
+    depends_on:
+      - onlinetesting-database
+
+  onlinetesting-database:
+    image: javaprojects/onlinetesting-db
+    volumes:
+      - "onlinetestingdata:/var/lib/postgresql/data"
+    networks:
+      - onlinetesting-network
+    ports:
+      - 5555:5432
+
+networks:
+  onlinetesting-network:
+
+volumes:
+  onlinetestingdata:

@@ -111,6 +111,11 @@ a[href$=".pdf"]{
     background: url(../img/pdf.png) no-repeat center left;
 }
 
+a[href$=".yaml"]{
+    padding-left: 20px;
+    background: url(../img/docker.png) no-repeat center left;
+}
+
 a[href^="/skillsaggregator"]{
     padding-left: 20px;
     background: url(../img/skills.png) no-repeat center left;
@@ -126,9 +131,9 @@ a[href$="/swagger-ui.html"]{
     background: url(../img/swagger.png) no-repeat center left;
 }
 
-a[href^="/training-management"]{
+a[href^="/reward-calculator"]{
     padding-left: 20px;
-    background: url(../img/training-management.png) no-repeat center left;
+    background: url(../img/reward.png) no-repeat center left;
 }
 
 a[href^="/onlinetesting"]{

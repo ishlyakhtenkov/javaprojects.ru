@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  rewardcalculator:
+    image: javaprojects/rewardcalculator
+    networks:
+      - rewardcalculator-network
+    ports:
+      - 8081:8080
+    depends_on:
+      - rewardcalculator-database
+
+  rewardcalculator-database:
+    image: javaprojects/rewardcalculator-database
+    volumes:
+      - "rewardcalculatordata:/var/lib/postgresql/data"
+    networks:
+      - rewardcalculator-network
+    ports:
+      - 5555:5432
+
+  angular-rewardcalculator:
+    image: javaprojects/angular-rewardcalculator
+    networks:
+      - rewardcalculator-network
+    ports:
+    - 80:80
+    depends_on:
+      - rewardcalculator
+
+networks:
+  rewardcalculator-network:
+
+volumes:
+  rewardcalculatordata:
