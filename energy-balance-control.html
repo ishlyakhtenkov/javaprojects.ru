@@ -1,0 +1,209 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Данное приложение используется для контроля энергетического баланса организма человека."/>
+		<title>Energy Balance Control - Java Projects</title>
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>	
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/include.js"></script>
+		<script src="js/about.js"></script>
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="sticky-top">
+			<div id="navbarContent"></div>
+		</div>
+		
+		<div id="aboutContent"></div>
+				
+		<div class="container mt-4">
+			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3">
+				Система контроля энергетического баланса
+			</div>
+			
+			<div class="mb-3">
+				<a href="/localhost:4201" target="_blank">Протестировать приложение</a> (credentials: admin@gmail.com/admin)</br>
+				<a href="/localhost:8028/swagger-ui.html">REST API Swagger документация</a></br>
+				<a href="https://github.com/igar15/energy-balance-control">Source code на GitHub (backend)</a></br>
+				<a href="https://github.com/igar15/angular--energy-balance-control">Source code на GitHub (frontend)</a></br>
+				<a href="docker-compose-files/ebc/docker-compose.yaml" download>Docker Compose file</a>
+			</div>
+							
+			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
+			<table class="table table-bordered">
+				<thead class="thead-dark">
+					<tr align="center">
+						<th style="width: 75%">Backend</th>
+						<th style="width: 25%">Frontend</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr align="center">
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-4">
+									<p>Maven</p>
+									<p>Spring Cloud</p>
+									<p>Spring Boot 2</p>
+									<p>Spring MVC</p>
+								</div>
+								<div class="col-4">
+									<p>Spring Data JPA (Hibernate)</p>
+									<p>Spring Security</p>
+									<p>REST (Jackson)</p>
+									<p>OpenAPI 3</p>
+								</div>
+								<div class="col-4">
+									<p>JUnit 5</p>
+									<p>Rabbit MQ</p>
+									<p>Zipkin</p>
+									<p>ELK Stack</p>
+								</div>
+							</div>
+						</td>
+						<td class="align-middle">
+							<div class="row">
+								<div class="col-12">
+									<p>Angular 2</p>
+									<p>Bootstrap 5</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>				
+			</table>
+			
+			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
+			<p class="text-justify">
+				&emsp;Данное приложение позволяет рассчитывать и держать под контролем энергетический баланс организма человека. Для этого осуществляется расчет калорий, затраченных на основной
+				обмен веществ организма, калорий, употребленных в пищу, а также калорий, затраченных на выполнение физических упражнений. На основе этих данных производится расчет энергетического
+				баланса и анализ полученного значения.</br>
+				&emsp;Приложение построено с использованием микросервисной архитектуры на стеке Spring Cloud.
+			</p>
+			<p class="text-justify">
+				&emsp;В приложении используется два вида пользовательских ролей: пользователи и администраторы. Каждой роли присущи свои выполняемые задачи.
+			</p>
+			<div class="row mb-3">
+				<div class="col-4">
+					<div class="text-justify mb-2">
+						&emsp;<strong>Пользователи</strong> могут зарегистрироваться в приложении, заполнив данные об учетной записи, а также личные физиологические данные на странице регистрации. Физиологические
+						данные необходимы для расчета калорий, затрачиваемых на основной обмен веществ организма. После успешной регистрации пользователю на электронную почту придет письмо, содержащее ссылку, 
+						перейдя по которой пользователь активирует свою учетную запись и сможет пользоваться приложением.</br>
+						&emsp;В случае, если пользователь забыл свой пароль, он может сбросить его, выполнив соответствующие действия на странице логина. На электронную почту придет письмо со ссылкой,
+						перейдя по которой пользователь сможет создать новый пароль.
+					</div>
+				</div>
+				<div class="col-8 text-right mt-auto">
+					<img src="img/ebc/register_form.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-8">
+					<div class="text-justify mb-2">
+						&emsp;Для подсчета калорий, употребленных в пищу в течение дня, пользователи вносят в приложение информацию о своих приемах пищи. Им доступна возможность
+						просматривать эту информацию, а также при необходимости изменять и удалять ее.
+					</div>
+					<img src="img/ebc/meal_list.png" class="img-fluid img-thumbnail">
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/ebc/add_meal.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-8">
+					<div class="text-justify mb-2">
+						&emsp;Для возможности вводить данные о проведенных физических тренировках пользователям сначала необходимо ввести в приложение информацию о типах физических упражнений,
+						которые они периодически выполняют для дальнейшей возможности их выбора в окне создания тренировок. Тип упражнения характеризуется названием упражнения, количественной единицей измерения,
+						а также количеством калорий, сжигаемых при выполнении упражнения.
+					</div>
+					<img src="img/ebc/exercise_type_list.png" class="img-fluid img-thumbnail">
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/ebc/add_exercise_type.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-8">
+					<div class="text-justify mb-2">
+						&emsp;Для подсчета калорий, затраченных на выполнение физических упражнений, пользователи вносят  в приложение информацию о своих тренировках. Им доступна возможность
+						просматривать эту информацию, а также при необходимости изменять и удалять ее.
+					</div>
+					<img src="img/ebc/exercise_list.png" class="img-fluid img-thumbnail">
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/ebc/add_exercise.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-8">
+					<div class="text-justify mb-3">
+						&emsp;Пользователи могут просматривать информацию о своем энергетическом балансе, выбирая интересующую их дату в календаре. После выбора даты пользователю представляется
+						отчет о его энергетическом балансе. Он формируется на основе данных о питании, выполненных физических упражнениях и основном обмене веществе на выбранный день.
+						В зависимости от количественной величины энергетического баланса отчет содержит соответствующее сообщение касательно похудения/набора веса.
+					</div>
+					<img src="img/ebc/calendar.png" class="img-fluid img-thumbnail">
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/ebc/energy_balance_report_neg.png" class="img-fluid img-thumbnail mb-1">
+					<img src="img/ebc/energy_balance_report_pos.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+			<p class="text-justify">
+				&emsp;<strong>Администраторам</strong> доступны любые действия, которые можно выполнить в приложении, включая вышеописанные действия, доступные обычным пользователям.
+			</p>
+			<div class="row mb-3">
+				<div class="col-5 mt-auto">
+					<div class="text-justify mb-2">
+						&emsp;Но основными задачами администраторов является менеджмент пользователей приложения и контроль за работой сервисов приложения.</br>
+						&emsp;Администраторы имеют возможность просматривать информацию о пользователях приложения с опцией поиска по имени/адресу электронной почты. Они имеют право создавать новых
+						пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся пользователях, удалять их учетные записи.</br>
+						&emsp;При удалении учетной записи пользователя вся информация пользователя касательно его приемов пищи, выполненных тренировок, личных видов физических упражнений, а также
+						отчеты по энергетическому балансу также удаляется.</br>
+						&emsp;При возникновении у пользователя проблем с подтверждением электронной почты, администратор может вручную активировать учетную запись пользователя.</br>
+						&emsp;В случае, если пользователь забыл свой пароль, у администратора есть возможность сменить пароль пользователя на новый.
+					</div>
+				</div>
+				<div class="col-7 text-right">
+					<img src="img/ebc/add_user.png" class="img-fluid img-thumbnail mb-1">
+				</div>
+			</div>
+			<img src="img/ebc/user_list.png" class="img-fluid img-thumbnail mb-2">
+			<p class="text-justify">
+				&emsp;Администраторы осуществляют контроль за работоспособностью приложения путем проверки состояния всех его сервисов. Также им доступна возможность обновления конфигурации сервисов.</br>
+			</p>
+			<div class="row mb-3">
+				<div class="col-4 mt-auto">
+					<div class="text-justify mb-2">
+						&emsp;Администраторы имеют доступ к дашбордам Eureka, Zipkin, Kibana, RabbitMQ. 
+						<img src="img/ebc/dashboards_choose.png" class="img-fluid img-thumbnail mb-1 mt-2">
+					</div>
+				</div>
+				<div class="col-8 text-right">
+					<img src="img/ebc/services_status.png" class="img-fluid img-thumbnail mb-1">
+				</div>
+			</div>
+			<p class="text-justify">
+				&emsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, изменить имя и личные физиологические данные, а также сменить текущий пароль. 
+			</p>
+			<div class="row mb-2">
+				<div class="col-8">
+					<img src="img/ebc/profile.png" class="img-fluid img-thumbnail">			
+				</div>
+				<div class="col-4 text-right mt-auto">
+					<img src="img/ebc/profile_change_password.png" class="img-fluid img-thumbnail">
+				</div>
+			</div>
+		</div>
+		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
+	</body>
+</html>

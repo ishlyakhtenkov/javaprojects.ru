@@ -156,6 +156,11 @@ a[href$="/album-accounting"]{
     background: url(../img/albums.png) no-repeat center left;
 }
 
+a[href$=":4201"]{
+    padding-left: 20px;
+    background: url(../img/ebc.png) no-repeat center left;
+}
+
 
 
 
