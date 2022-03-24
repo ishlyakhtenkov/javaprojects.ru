@@ -1,0 +1,358 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: igar15
+      RABBITMQ_DEFAULT_PASS: 123456Kmx
+    networks:
+      ebc-network:
+        aliases:
+          - "rabbitmq"
+
+  database:
+    image: javaprojects/ebc_database
+    container_name: database
+    ports:
+      - 5433:5432
+    networks:
+      ebc-network:
+        aliases:
+          - "database"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d ebc -U igar15"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  config-server:
+    image: javaprojects/ebc_config-server
+    container_name: config-server
+    ports:
+      - 8029:8029
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      ENCRYPT_KEY: d23e5862-cc5d-4f03-aadf-893cc53a2a35
+      SPRING_SECURITY_USER_NAME: igar15
+      SPRING_SECURITY_USER_PASSWORD: 123456Kmx
+    depends_on:
+      rabbitmq:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "config-server"
+
+  eureka-server:
+    image: javaprojects/ebc_eureka-server
+    container_name: eureka-server
+    ports:
+      - 8027:8027
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "eureka-server"
+
+  gateway-server:
+    image: javaprojects/ebc_gateway-server
+    container_name: gateway-server
+    ports:
+      - 8028:8028
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "gateway-server"
+
+  user-service:
+    image: javaprojects/ebc_user-service
+    container_name: user-service
+    ports:
+      - 8025:8025
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "user-service"
+
+  meal-service:
+    image: javaprojects/ebc_meal-service
+    container_name: meal-service
+    ports:
+      - 8020:8020
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "meal-service"
+
+  training-service:
+    image: javaprojects/ebc_training-service
+    container_name: training-service
+    ports:
+      - 8021:8021
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "training-service"
+
+  password-reset-service:
+    image: javaprojects/ebc_password-reset-service
+    container_name: password-reset-service
+    ports:
+      - 8026:8026
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "password-reset-service"
+
+  energy-balance-service:
+    image: javaprojects/ebc_energy-balance-service
+    container_name: energy-balance-service
+    ports:
+      - 8023:8023
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "energy-balance-service"
+
+  email-verification-service:
+    image: javaprojects/ebc_email-verification-service
+    container_name: email-verification-service
+    ports:
+      - 8024:8024
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "email-verification-service"
+
+  bx-service:
+    image: javaprojects/ebc_bx-service
+    container_name: bx-service
+    ports:
+      - 8022:8022
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8029
+      SPRING_CLOUD_CONFIG_USERNAME: igar15
+      SPRING_CLOUD_CONFIG_PASSWORD: 123456Kmx
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      config-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      logstash:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "bx-service"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+    container_name: elasticsearch
+    ports:
+      - 9300:9300
+      - 9200:9200
+    environment:
+      - node.name=elasticsearch
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    networks:
+      ebc-network:
+        aliases:
+          - "elasticsearch"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.7.0
+    container_name: kibana
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9300
+    networks:
+      ebc-network:
+        aliases:
+          - "kibana"
+
+  logstash:
+    image: javaprojects/ebc_logstash
+    container_name: logstash
+    ports:
+      - 5000:5000
+    networks:
+      ebc-network:
+        aliases:
+          - "logstash"
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - 9411:9411
+    environment:
+      - STORAGE_TYPE=elasticsearch
+      - "ES_HOSTS=elasticsearch:9300"
+    depends_on:
+      - elasticsearch
+    networks:
+      ebc-network:
+        aliases:
+          - "zipkin"
+
+  angular-ebc:
+    image: javaprojects/ebc_angular
+    container_name: angular-ebc
+    ports:
+      - 4201:4201
+    depends_on:
+      gateway-server:
+        condition: service_started
+      eureka-server:
+        condition: service_started
+      config-server:
+        condition: service_started
+    networks:
+      ebc-network:
+        aliases:
+          - "angular-ebc"
+
+volumes:
+  esdata1:
+    driver: local
+
+networks:
+  ebc-network:
+    driver: bridge
