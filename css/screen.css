@@ -136,6 +136,11 @@ a[href^="/skillsaggregator"]{
     background: url(../img/skills.png) no-repeat center left;
 }
 
+a[href^="/skillaggregator"]{
+    padding-left: 20px;
+    background: url(../img/skills.png) no-repeat center left;
+}
+
 a[href^="/restaurant-voting"]{
     padding-left: 20px;
     background: url(../img/voting.png) no-repeat center left;
