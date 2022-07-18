@@ -11,7 +11,7 @@ services:
       - onlinetesting-database
 
   onlinetesting-database:
-    image: javaprojects/onlinetesting-db
+    image: javaprojects/onlinetesting-database
     volumes:
       - "onlinetestingdata:/var/lib/postgresql/data"
     networks:
