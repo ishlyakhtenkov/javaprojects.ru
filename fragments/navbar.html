@@ -1,39 +1,41 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark py-1">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-1">
 	<div class="container">
-		<a class="navbar-brand font-weight-bold" href="https://javaprojects.ru">
-			<img src="img/java.png" width="30" height="30" class="d-inline-block mb-3" alt="">
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand font-weight-bold" href="https://javaprojects.ru" title="Java Projects">
+			<img src="img/java.png" width="30" height="30" class="d-inline-block mb-3" alt="Java Projects Logo">
 			Java Projects
 		</a>
-				
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Проекты
-				</a>
-				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="energy-balance-control.html">Система контроля энергетического баланса</a>
-					<a class="dropdown-item" href="album-accounting.html">Система учета альбомов КД</a>
-					<a class="dropdown-item" href="skill-aggregator-new.html">Агрегатор ключевых навыков (new)</a>
-					<a class="dropdown-item" href="skill-aggregator-old.html">Агрегатор ключевых навыков (old)</a>
-					<a class="dropdown-item" href="reward-calculator.html">Система расчета премий работников</a>
-					<a class="dropdown-item" href="online-testing.html">Система онлайн тестирования</a>
-					<a class="dropdown-item" href="calories-management.html">Система подсчета калорий</a>
-					<a class="dropdown-item" href="restaurant-voting.html">Система голосования за рестораны</a>
-					<a class="dropdown-item" href="copy-maker.html">Копировщик документов</a>
-				</div>
-			</li>
-			<!--
-			<li class="nav-item">
-				<a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onclick="rotateIcon(); goTop()">
-					О сайте <i class="fas fa-angle-down" id="collapsed-chevron"></i>
-				</a>
-			</li>
-			-->
-			<li class="nav-item">
-				<a class="nav-link" href="/about.html">
-					О сайте
-				</a>
-			</li>
-		</ul>
+		<div class="collapse navbar-collapse flex-row-reverse" id="navbar">
+			<ul class="navbar-nav">
+				<li class="nav-item d-lg-none">
+					<a class="nav-link" href="https://javaprojects.ru">
+						На главную
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Проекты<span class="caret"></span>
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="energy-balance-control.html">Система контроля энергетического баланса</a>
+						<a class="dropdown-item" href="album-accounting.html">Система учета альбомов КД</a>
+						<a class="dropdown-item" href="skill-aggregator-new.html">Агрегатор ключевых навыков (new)</a>
+						<a class="dropdown-item" href="skill-aggregator-old.html">Агрегатор ключевых навыков (old)</a>
+						<a class="dropdown-item" href="reward-calculator.html">Система расчета премий работников</a>
+						<a class="dropdown-item" href="online-testing.html">Система онлайн тестирования</a>
+						<a class="dropdown-item" href="calories-management.html">Система подсчета калорий</a>
+						<a class="dropdown-item" href="restaurant-voting.html">Система голосования за рестораны</a>
+						<a class="dropdown-item" href="copy-maker.html">Копировщик документов</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/about.html">
+						О сайте
+					</a>
+				</li>
+			</ul>
+		</div>		
 	</div>
 </nav>
