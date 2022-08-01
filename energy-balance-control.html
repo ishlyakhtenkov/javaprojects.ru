@@ -2,106 +2,138 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение используется для контроля энергетического баланса организма человека."/>
+		<meta name="description" content="Energy Balance Control description"/>
 		<title>Energy Balance Control - Java Projects</title>
-		
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/all.css">
 		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ebc.css"/>
 		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
+		<div class="container">
+			<div class="h1 bg-secondary text-white font-weight-bold p-3 mb-4 rounded">
 				<img src="img/ebc-big.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Система контроля энергетического баланса
+				Контроль энергобаланса
 			</div>
 			
-			<div class="mb-3">
-				<a href="http://87.255.8.65:4201" target="_blank">Протестировать приложение</a> (credentials: admin@gmail.com/admin)</br>
+			<div class="mb-4">
+				<a href="http://87.255.8.65:4201" target="_blank">Протестировать приложение</a></br>
 				<a href="http://87.255.8.65:8028/swagger-ui.html">REST API Swagger документация</a></br>
 				<a href="https://github.com/ishlyakhtenkov/energy-balance-control">Source code на GitHub (backend)</a></br>
 				<a href="https://github.com/ishlyakhtenkov/angular--energy-balance-control">Source code на GitHub (frontend)</a></br>
 				<a href="docker-compose-files/ebc/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
-							
-			<div class="h5 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<thead class="thead-dark">
-					<tr align="center">
-						<th style="width: 75%">Backend</th>
-						<th style="width: 25%">Frontend</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-4">
-									<p>Maven</p>
-									<p>Spring Cloud</p>
-									<p>Spring Boot 2</p>
-									<p>Spring MVC</p>
-								</div>
-								<div class="col-4">
-									<p>Spring Data JPA (Hibernate)</p>
-									<p>Spring Security</p>
-									<p>REST (Jackson)</p>
-									<p>OpenAPI 3</p>
-								</div>
-								<div class="col-4">
-									<p>JUnit 5</p>
-									<p>Rabbit MQ</p>
-									<p>Zipkin</p>
-									<p>ELK Stack</p>
-								</div>
-							</div>
-						</td>
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-12">
-									<p>Angular 2</p>
-									<p>Bootstrap 5</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
 			
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<p class="text-justify">
-				&emsp;Данное приложение позволяет рассчитывать и держать под контролем энергетический баланс организма человека. Для этого осуществляется расчет калорий, затраченных на основной
-				обмен веществ организма, калорий, употребленных в пищу, а также калорий, затраченных на выполнение физических упражнений. На основе этих данных производится расчет энергетического
-				баланса и анализ полученного значения.</br>
-				&emsp;Приложение построено с использованием микросервисной архитектуры на стеке Spring Cloud.
-			</p>
-			<p class="text-justify">
-				&emsp;В приложении используется два вида пользовательских ролей: пользователи и администраторы. Каждой роли присущи свои выполняемые задачи.
-			</p>
-			<div class="row mb-3">
-				<div class="col-4">
-					<div class="text-justify mb-2">
-						&emsp;<strong>Пользователи</strong> могут зарегистрироваться в приложении, заполнив данные об учетной записи, а также личные физиологические данные на странице регистрации. Физиологические
-						данные необходимы для расчета калорий, затрачиваемых на основной обмен веществ организма. После успешной регистрации пользователю на электронную почту придет письмо, содержащее ссылку, 
-						перейдя по которой пользователь активирует свою учетную запись и сможет пользоваться приложением.</br>
-						&emsp;В случае, если пользователь забыл свой пароль, он может сбросить его, выполнив соответствующие действия на странице логина. На электронную почту придет письмо со ссылкой,
-						перейдя по которой пользователь сможет создать новый пароль.
+			<div class="h3">
+				Использованные технологии
+			</div>
+			<hr class="hr-about my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Frontend</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring Cloud</p>
+						</div>
+						<div class="col">
+							<p>Spring Boot 2</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>Spring Security</p>
+						</div>
+						<div class="col">
+							<p>REST (Jackson)</p>
+						</div>
+						<div class="col">
+							<p>OpenAPI 3</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+						<div class="col">
+							<p>Rabbit MQ</p>
+						</div>
+						<div class="col">
+							<p>Zipkin</p>
+						</div>
+						<div class="col">
+							<p>ELK Stack</p>
+						</div>
 					</div>
 				</div>
-				<div class="col-8 text-right mt-auto">
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-1">
+						<div class="col">
+							<p>Angular 2</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 5</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="h3">
+				Описание приложения
+			</div>
+			<hr class="hr-about my-3">
+			
+			<div class="text-justify">
+				<p>
+					Данное приложение позволяет рассчитывать и держать под контролем энергетический баланс организма человека. Для этого осуществляется расчет калорий, затраченных на основной
+					обмен веществ организма, калорий, употребленных в пищу, а также калорий, затраченных на выполнение физических упражнений. На основе этих данных производится расчет энергетического
+					баланса и анализ полученного значения.</br>
+				</p>
+				<p>
+					Приложение построено с использованием микросервисной архитектуры на стеке Spring Cloud.
+				</p>
+				<p>
+					В приложении используется два вида пользовательских ролей: пользователи и администраторы. Каждой роли присущи свои выполняемые задачи.
+				</p>
+			</div>
+			
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 mb-3">
+				<div class="col col-lg-5">
+					<div class="text-justify mb-2">
+						<p>
+							<strong>Пользователи</strong> могут зарегистрироваться в приложении, заполнив данные об учетной записи, а также личные физиологические данные на странице регистрации. Физиологические
+							данные необходимы для расчета калорий, затрачиваемых на основной обмен веществ организма. После успешной регистрации пользователю на электронную почту придет письмо, содержащее ссылку, 
+							перейдя по которой пользователь активирует свою учетную запись и сможет пользоваться приложением.</br>
+						</p>
+						<div class="col d-lg-none text-right mt-auto p-0">
+							<img src="img/ebc/register_form.png" class="img-fluid img-thumbnail">
+						</div>					
+						<p>
+							В случае, если пользователь забыл свой пароль, он может сбросить его, выполнив соответствующие действия на странице логина. На электронную почту придет письмо со ссылкой,
+							перейдя по которой пользователь сможет создать новый пароль.
+						</p>
+					</div>
+				</div>
+				<div class="col col-lg-7 d-none d-lg-block text-right mt-auto">
 					<img src="img/ebc/register_form.png" class="img-fluid img-thumbnail">
 				</div>
 			</div>
@@ -206,5 +238,10 @@
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>	
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/include.js"></script>
 	</body>
 </html>
