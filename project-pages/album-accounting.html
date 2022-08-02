@@ -1,82 +1,97 @@
-<html>
+<!doctype html>
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение используется для учета альбомов технической документации, поступающих в архив на хранение."/>
-		<title>Album Accounting - Java Projects</title>
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
-		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
+		<meta name="description" content="Приложение используется работниками архива документов для учета альбомов конструкторской документации."/>
+		<title>Учет альбомов КД - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/album-accounting.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
-				<img src="img/albums-big.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Система учета альбомов КД
+		<div class="container">			
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/album-accounting/album-accounting-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Album Accounting Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Учет альбомов КД</span>
 			</div>
 			
-			<div class="mb-3">
-				<a href="/album-accounting" target="_blank">Протестировать приложение</a> (credentials: admin@gmail.com/admin)</br>
-				<a href="/albumaccounting/swagger-ui.html">REST API Swagger документация</a></br>
-				<a href="https://github.com/ishlyakhtenkov/albumaccounting">Source code на GitHub (backend)</a></br>
-				<a href="https://github.com/ishlyakhtenkov/angular-albumaccounting">Source code на GitHub (frontend)</a></br>
-				<a href="docker-compose-files/albumaccounting/docker-compose.yaml" download>Docker Compose file</a>
+			<div class="mb-4">
+				<a href="/album-accounting" target="_blank">Протестировать приложение</a><br>
+				<a href="/albumaccounting/swagger-ui.html">REST API Swagger документация</a><br>
+				<a href="https://github.com/ishlyakhtenkov/albumaccounting">Source code на GitHub (backend)</a><br>
+				<a href="https://github.com/ishlyakhtenkov/angular-albumaccounting">Source code на GitHub (frontend)</a><br>
+				<a href="../docker-compose-files/album-accounting/docker-compose.yaml" download>Docker Compose file</a>
+			</div>
+			
+			<div class="h3">
+				Использованные технологии
+			</div>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Frontend</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring Boot 2</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>Spring Security</p>
+						</div>
+						<div class="col">
+							<p>REST (Jackson)</p>
+						</div>
+						<div class="col">
+							<p>OpenAPI 3</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+						<div class="col">
+							<p>JSON Web Token</p>
+						</div>
+					</div>
+				</div>
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-1">
+						<div class="col">
+							<p>Angular 2</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 4</p>
+						</div>
+					</div>
+				</div>
 			</div>
 							
-			<div class="h5 font-weight-bold">&emsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<thead class="thead-dark">
-					<tr align="center">
-						<th style="width: 75%">Backend</th>
-						<th style="width: 25%">Frontend</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-4">
-									<p>Maven</p>
-									<p>Spring Boot</p>
-									<p>Spring MVC</p>
-								</div>
-								<div class="col-4">
-									<p>Spring Data JPA (Hibernate)</p>
-									<p>Spring Security</p>
-									<p>REST (Jackson)</p>
-								</div>
-								<div class="col-4">
-									<p>JSON Web Token</p>
-									<p>JUnit 5</p>
-									<p>OpenAPI 3</p>
-								</div>
-							</div>
-						</td>
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-12">
-									<p>Angular 2</p>
-									<p>Bootstrap 4</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
+			<div class="h3">
+				Описание приложения
+			</div>
+			<hr class="hr-bold my-3">
 			
 			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
 			<p class="text-justify">
@@ -92,15 +107,15 @@
 				альбомов по их децимальным номерам. Поддерживается поиск альбомов по имени текущего держателя, что удобно использовать при необходимости проверки 
 				какие альбомы числятся за тем или иным разработчиком.</br>
 			</p>
-			<img src="img/album-accounting/anonimous-albums.png" class="img-fluid img-thumbnail mb-3">			
+			<img src="../images/album-accounting/album-list-anon-user.png" class="img-fluid img-thumbnail mb-3" alt="Album list anon user">			
 			<div class="row mb-3">
 				<div class="col-8 text-justify">
 					&emsp;<strong>Работники архива</strong> кроме возможности просмотра информации об альбомах имеют право добавлять новые альбомы, а также редактировать и удалять информацию об уже имеющихся, 
 					в том числе указывать отдел и имя разработчика, которому был выдан альбом.</br>
-					<img src="img/album-accounting/archive-worker-albums.png" class="img-fluid img-thumbnail">			
+					<img src="../images/album-accounting/album-list-arch-user.png" class="img-fluid img-thumbnail">			
 				</div>
 				<div class="col-4 text-right mt-auto">
-					<img src="img/album-accounting/adding-album.png" class="img-fluid img-thumbnail">
+					<img src="../images/album-accounting/add-album.png" class="img-fluid img-thumbnail">
 				</div>
 			</div>
 			<p class="text-justify">
@@ -109,10 +124,10 @@
 			</p>
 			<div class="row mb-3">
 				<div class="col-8">
-					<img src="img/album-accounting/employees.png" class="img-fluid img-thumbnail">			
+					<img src="../images/album-accounting/employee-list.png" class="img-fluid img-thumbnail">			
 				</div>
 				<div class="col-4 text-right">
-					<img src="img/album-accounting/editing-employee.png" class="img-fluid img-thumbnail">
+					<img src="../images/album-accounting/edit-employee.png" class="img-fluid img-thumbnail">
 				</div>
 			</div>
 			<p class="text-justify">
@@ -123,10 +138,10 @@
 			</p>
 			<div class="row mb-3">
 				<div class="col-8 mt-auto">
-					<img src="img/album-accounting/users.png" class="img-fluid img-thumbnail">			
+					<img src="../images/album-accounting/user-list.png" class="img-fluid img-thumbnail">			
 				</div>
 				<div class="col-4 text-right">
-					<img src="img/album-accounting/adding-user.png" class="img-fluid img-thumbnail">
+					<img src="../images/album-accounting/add-user.png" class="img-fluid img-thumbnail">
 				</div>
 			</div>
 			<p class="text-justify">
@@ -135,10 +150,10 @@
 			</p>
 			<div class="row mb-3">
 				<div class="col-8">
-					<img src="img/album-accounting/departments.png" class="img-fluid img-thumbnail">			
+					<img src="../images/album-accounting/department-list.png" class="img-fluid img-thumbnail">			
 				</div>
 				<div class="col-4 text-right mt-auto">
-					<img src="img/album-accounting/editing-department.png" class="img-fluid img-thumbnail">
+					<img src="../images/album-accounting/edit-department.png" class="img-fluid img-thumbnail">
 				</div>
 			</div>
 			<p class="text-justify">
@@ -146,10 +161,10 @@
 			</p>
 			<div class="row mb-2">
 				<div class="col-8">
-					<img src="img/album-accounting/profile.png" class="img-fluid img-thumbnail">			
+					<img src="../images/album-accounting/profile.png" class="img-fluid img-thumbnail">			
 				</div>
 				<div class="col-4 text-right mt-auto">
-					<img src="img/album-accounting/changing-password.png" class="img-fluid img-thumbnail">
+					<img src="../images/album-accounting/change-password.png" class="img-fluid img-thumbnail">
 				</div>
 			</div>
 		</div>
@@ -157,5 +172,10 @@
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
 	</body>
 </html>

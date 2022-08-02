@@ -1,0 +1,26 @@
+body {
+ padding-top: 90px;
+}
+
+.rounded{
+  border-radius:10px !important; 
+}
+
+.hr-bold {
+    border: none;
+    height: 3px;
+    background-color: #626262;
+}
+
+@media (min-width: 300px) {  
+  .my-h1 {
+	  font-size:1.3rem;
+	  } /*1rem = 16px*/
+}
+
+@media (min-width: 768px) {  
+  .my-h1 {
+	  font-size:2.2rem;
+	  } /*1rem = 16px*/
+}
+
