@@ -12,7 +12,7 @@ a[href^="https://t.me"] {
 
 a[href^="https://github.com"] {
     padding-left: 20px !important;
-	padding-bottom: 2px;
+	padding-bottom: 1px;
     background: url(../images/shared/github-logo.png) no-repeat center left;
 }
 
@@ -24,7 +24,7 @@ a[href$="/swagger-ui.html"]{
 
 a[href$=".yaml"]{
     padding-left: 20px;
-	padding-bottom: 2px;
+	padding-bottom: 3px;
     background: url(../images/shared/docker-logo.png) no-repeat center left;
 }
 

@@ -16,7 +16,7 @@
 				
 		<div class="container">
 			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
-				<img src="../images/energy-balance-control/energy-balance-control-logo-big.png" width="40" height="40" class="mb-3 ml-3 pt-1" alt="Energy Balance Control Logo">
+				<img src="../images/energy-balance-control/energy-balance-control-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Energy Balance Control Logo">
 				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Контроль энергобаланса</span>
 			</div>
 			
@@ -25,7 +25,7 @@
 				<a href="http://87.255.8.65:8028/swagger-ui.html">REST API Swagger документация</a></br>
 				<a href="https://github.com/ishlyakhtenkov/energy-balance-control">Source code на GitHub (backend)</a></br>
 				<a href="https://github.com/ishlyakhtenkov/angular--energy-balance-control">Source code на GitHub (frontend)</a></br>
-				<a href="docker-compose-files/ebc/docker-compose.yaml" download>Docker Compose file</a>
+				<a href="../docker-compose-files/energy-balance-control/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
 			
 			<div class="h3">
@@ -139,6 +139,20 @@
 				</div>
 			</div>
 			
+			<h4>Профиль</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, изменить имя и личные физиологические данные,
+					а также сменить текущий пароль. 
+				</p>
+				<p>
+					Пользователям также доступна возможность удалить свой аккаунт, при этом все данные касательно приемов пищи, тренировок и отчетов по
+					энергетическому балансу также удалятся.
+				</p>
+			</div>
+			<img src="../images/energy-balance-control/profile.png" class="img-fluid img-thumbnail mb-4" alt="Profile">
+			
 			<h4>Калории</h4>
 			<hr class="my-1">
 			<p class="text-justify">
@@ -178,64 +192,65 @@
 				В зависимости от количественной величины энергетического баланса отчет содержит соответствующее сообщение касательно похудения/набора веса.
 			</p>
 			<div class="row row-cols-1 row-cols-md-3">
-				<div class="col mb-3">
+				<div class="col mb-4">
 					<img src="../images/energy-balance-control/energy-balance-report-negative.png" class="img-fluid img-thumbnail" alt="Negative energy balance report">
 				</div>
-				<div class="col mb-3">
+				<div class="col mb-4">
 					<img src="../images/energy-balance-control/energy-balance-report-positive.png" class="img-fluid img-thumbnail" alt="Positive energy balance report">
 				</div>
-				<div class="col mb-3">
+				<div class="col mb-4">
 					<img src="../images/energy-balance-control/energy-balance-report-zero.png" class="img-fluid img-thumbnail" alt="Zero energy balance report">
 				</div>
 			</div>
 			
-			
-			
-			<p class="text-justify">
-				&emsp;<strong>Администраторам</strong> доступны любые действия, которые можно выполнить в приложении, включая вышеописанные действия, доступные обычным пользователям.
-			</p>
-			<div class="row mb-3">
-				<div class="col-5 mt-auto">
-					<div class="text-justify mb-2">
-						&emsp;Но основными задачами администраторов является менеджмент пользователей приложения и контроль за работой сервисов приложения.</br>
-						&emsp;Администраторы имеют возможность просматривать информацию о пользователях приложения с опцией поиска по имени/адресу электронной почты. Они имеют право создавать новых
-						пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся пользователях, удалять их учетные записи.</br>
-						&emsp;При удалении учетной записи пользователя вся информация пользователя касательно его приемов пищи, выполненных тренировок, личных видов физических упражнений, а также
-						отчеты по энергетическому балансу также удаляется.</br>
-						&emsp;При возникновении у пользователя проблем с подтверждением электронной почты, администратор может вручную активировать учетную запись пользователя.</br>
-						&emsp;В случае, если пользователь забыл свой пароль, у администратора есть возможность сменить пароль пользователя на новый.
+			<h4>Задачи администраторов</h4>
+			<hr class="my-1">
+			<div class="row row-cols-1 row-cols-xl-2 mb-1">
+				<div class="col col-xl-5">
+					<div class="text-justify">
+						<p>
+							Основными задачами администраторов приложения является менеджмент пользователей а также контроль за работой сервисов приложения.
+						</p>
+						<p>
+							Администраторы имеют возможность просматривать информацию о пользователях приложения с опцией поиска по имени или 
+							адресу электронной почты.
+						</p>
+						<div class="col d-xl-none p-0 mb-3">
+							<img src="../images/energy-balance-control/user-list.png" class="img-fluid img-thumbnail" alt="User list">
+						</div>
+						<p>
+							Они имеют право создавать новых пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся
+							пользователях, блокировать и удалять их учетные записи. При удалении учетной записи пользователя его данные касательно приемов пищи, 
+							тренировок и отчетов по	энергетическому балансу также удалятся.
+						</p>
+						<div class="col d-xl-none p-0 mb-3">
+							<img src="../images/energy-balance-control/add-user.png" class="img-fluid img-thumbnail" alt="Add user">
+						</div>
+						<p>
+							При возникновении у пользователя проблем с подтверждением указанной при регистрации электронной почты, администратор может вручную активировать учетную запись пользователя.
+						</p>
+						<p>
+							В случае, если пользователь забыл свой пароль, у администраторов имеется возможность вручную сменить пароль пользователя на новый.
+						</p>
 					</div>
 				</div>
-				<div class="col-7 text-right">
+				<div class="col col-xl-7 d-none d-xl-block mt-2">
 					<img src="../images/energy-balance-control/add-user.png" class="img-fluid img-thumbnail mb-1" alt="Add user">
 				</div>
 			</div>
-			<img src="../images/energy-balance-control/user-list.png" class="img-fluid img-thumbnail mb-2" alt="User list">
-			<p class="text-justify">
-				&emsp;Администраторы осуществляют контроль за работоспособностью приложения путем проверки состояния всех его сервисов. Также им доступна возможность обновления конфигурации сервисов.</br>
-			</p>
-			<div class="row mb-3">
-				<div class="col-4 mt-auto">
-					<div class="text-justify mb-2">
-						&emsp;Администраторы имеют доступ к дашбордам Eureka, Zipkin, Kibana, RabbitMQ. 
-						<img src="../images/energy-balance-control/dashboard-dropdown.png" class="img-fluid img-thumbnail mb-1 mt-2" alt="Dashboard dropdown list">
-					</div>
-				</div>
-				<div class="col-8 text-right">
-					<img src="../images/energy-balance-control/services-status.png" class="img-fluid img-thumbnail mb-1" alt="Services status">
-				</div>
+			<img src="../images/energy-balance-control/user-list.png" class="img-fluid img-thumbnail d-none d-xl-block mb-2" alt="User list">
+			<div class="text-justify">
+				<p>
+					Администраторы осуществляют контроль за работоспособностью приложения путем проверки состояния всех его сервисов.
+					При необходимости они имеют право обновить конфигурацию сервисов, новая конфигурация будет загружена с удаленного репозитория,
+					размещенного на GitHub.
+				</p>
+				<p>
+					Для получения дополнительной информации о работе приложения и отслеживания его состояния администраторам представляется
+					доступ к дашбордам Eureka, Zipkin, Kibana, RabbitMQ.
+				</p>
 			</div>
-			<p class="text-justify">
-				&emsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, изменить имя и личные физиологические данные, а также сменить текущий пароль. 
-			</p>
-			<div class="row mb-2">
-				<div class="col-8">
-					<img src="../images/energy-balance-control/profile.png" class="img-fluid img-thumbnail" alt="Profile">			
-				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="../images/energy-balance-control/change-password-user.png" class="img-fluid img-thumbnail" alt="Change password">
-				</div>
-			</div>
+			<img src="../images/energy-balance-control/services-status.png" class="img-fluid img-thumbnail mb-4" alt="Services status">
 		</div>
 		
 		<footer class="mt-auto text-lg-start">
