@@ -2,8 +2,11 @@ body {
  padding-top: 90px;
 }
 
+.rounded{
+  border-radius:10px !important; 
+}
 
-.hr-about {
+.hr-bold {
     border: none;
     height: 3px;
     background-color: #626262;
@@ -11,7 +14,7 @@ body {
 
 @media (min-width: 300px) {  
   .my-h1 {
-	  font-size:1.5rem;
+	  font-size:1.3rem;
 	  } /*1rem = 16px*/
 }
 

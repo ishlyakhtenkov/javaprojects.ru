@@ -1,0 +1,81 @@
+a[href^="mailto:"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/about-page/email-logo.png) no-repeat center left;
+}
+
+a[href^="https://t.me"] {
+    padding-left: 20px !important;
+	padding-bottom: 2px;
+    background: url(../images/about-page/telegram-logo.png) no-repeat center left;
+}
+
+a[href^="https://github.com"] {
+    padding-left: 20px !important;
+	padding-bottom: 2px;
+    background: url(../images/shared/github-logo.png) no-repeat center left;
+}
+
+a[href$="/swagger-ui.html"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/shared/swagger-logo.png) no-repeat center left;
+}
+
+a[href$=".yaml"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/shared/docker-logo.png) no-repeat center left;
+}
+
+a[href^="/skillsaggregator"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/skill-aggregator/skill-aggregator-logo.png) no-repeat center left;
+}
+
+a[href^="/skillaggregator"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/skill-aggregator/skill-aggregator-logo.png) no-repeat center left;
+}
+
+a[href^="/restaurant-voting"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/restaurant-aggregator/restaurant-aggregator-logo.png) no-repeat center left;
+}
+
+a[href^="/reward-calculator"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/reward-calculator/reward-calculator-logo.png) no-repeat center left;
+}
+
+a[href^="/onlinetesting"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/online-testing/online-testing-logo.png) no-repeat center left;
+}
+
+a[href^="/calories-management"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/calories-management/calories-management-logo.png) no-repeat center left;
+}
+
+a[href$="/album-accounting"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/album-accounting/album-accounting-logo.png) no-repeat center left;
+}
+
+a[href$=":4201"]{
+    padding-left: 20px;
+	padding-bottom: 2px;
+    background: url(../images/energy-balance-control/energy-balance-control-logo.png) no-repeat center left;
+}
+
+
+
+

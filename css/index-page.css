@@ -2,6 +2,10 @@ body {
  padding-top: 110px;
 }
 
+.rounded{
+  border-radius:15px !important; 
+}
+
 .card-img-top {
 	border-radius: 15px 15px 0px 0px;
 }
