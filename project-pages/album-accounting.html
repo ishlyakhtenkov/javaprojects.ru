@@ -29,9 +29,7 @@
 				<a href="../docker-compose-files/album-accounting/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
 			
-			<div class="h3">
-				Использованные технологии
-			</div>
+			<h3>Использованные технологии</h3>
 			<hr class="hr-bold my-3">
 			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
@@ -88,83 +86,116 @@
 				</div>
 			</div>
 							
-			<div class="h3">
-				Описание приложения
-			</div>
+			<h3>Описание приложения</h3>
 			<hr class="hr-bold my-3">
 			
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<p class="text-justify">
-				&emsp;Данное приложение используется работниками архива для учета альбомов конструкторской документации, поступающих в архив на хранение, 
-				и выдаваемых разработчикам для личного пользования, а также позволяет определять текущее местонахождение требующегося альбома.</br>
-				&emsp;<i>Примечание. Под альбомом в данном случае понимается некоторое количество взаимосвязанных конструкторских документов, распечатанных на бумаге и переплетенных в книгу. 
-				Каждый альбом имеет децимальный номер, равный децимальному номеру главного документа в альбоме, а также "штамп"- специальное обозначение, 
-				определяющее производственную область применения альбома.</i>
-			</p>
-			<p class="text-justify">
-				&emsp;В приложении используется три вида пользователей: анонимные пользователи, работники архива и администраторы.</br>
-				&emsp;<strong>Анонимные пользователи</strong> могут просматривать информацию об имеющихся в архиве альбомах конструкторской документации, а также осуществлять поиск 
-				альбомов по их децимальным номерам. Поддерживается поиск альбомов по имени текущего держателя, что удобно использовать при необходимости проверки 
-				какие альбомы числятся за тем или иным разработчиком.</br>
-			</p>
-			<img src="../images/album-accounting/album-list-anon-user.png" class="img-fluid img-thumbnail mb-3" alt="Album list anon user">			
-			<div class="row mb-3">
-				<div class="col-8 text-justify">
-					&emsp;<strong>Работники архива</strong> кроме возможности просмотра информации об альбомах имеют право добавлять новые альбомы, а также редактировать и удалять информацию об уже имеющихся, 
-					в том числе указывать отдел и имя разработчика, которому был выдан альбом.</br>
-					<img src="../images/album-accounting/album-list-arch-user.png" class="img-fluid img-thumbnail">			
+			<div class="text-justify">
+				<p>
+					Данное приложение используется работниками архива для учета альбомов конструкторской документации, поступающих в архив на хранение, 
+					и выдаваемых разработчикам для личного пользования, а также позволяет определять текущее местонахождение требующегося альбома.
+				</p>
+				<p>
+					Под альбомом в данном контексте понимается некоторое количество взаимосвязанных конструкторских документов, распечатанных на бумаге и переплетенных в книгу. 
+					Каждый альбом имеет децимальный номер, равный децимальному номеру главного документа в альбоме, а также "штамп"- специальное обозначение, 
+					определяющее производственную область применения альбома.
+				</p>
+				<p>
+					В приложении используется три вида пользовательских ролей: анонимные пользователи, работники архива и администраторы.
+				</p>
+			</div>
+			
+			<h4>Информация об альбомах</h4>
+			<hr class="my-1">
+			
+			<div class="text-justify">
+				<p>
+					Анонимным пользователям доступна возможность просматривать информацию об имеющихся в архиве альбомах конструкторской документации, а также осуществлять поиск 
+					альбомов по их децимальным номерам. Поддерживается поиск альбомов по имени текущего держателя, что удобно использовать при необходимости проверки 
+					какие альбомы числятся за тем или иным разработчиком.</br>
+				</p>
+			</div>
+			<img src="../images/album-accounting/album-list-anon-user.png" class="img-fluid img-thumbnail mb-3" alt="Album list anon user">		
+			
+			<h4>Работники архива</h4>
+			<hr class="my-1">
+			
+			<div class="text-justify mb-3">
+				<p>
+					Интерфейс приложения расширяется для пользователей с ролью "Работник архива".
+				</p>
+				<p>
+					Помимо базовой информации об альбомах, а также благодаря тому, что все альбомы в архиве упорядочены по возрастанию их децимальных номеров,
+					работникам архива предоставляются сведения о том, на каком месте (номер стеллажа/номер полки) должен находится тот или иной альбом.
+				</p>
+				<img src="../images/album-accounting/album-list-arch-user.png" class="img-fluid img-thumbnail mb-3" alt="Album list archive user">
+				<p>
+					Кроме просмотра данных об уже имеющихся в архиве альбомах работники архива имеют право добавлять в приложение данные о новых альбомах, а также редактировать
+					информацию об уже имеющихся, в том числе указывать отдел и разработчика, которому был выдан альбом. При необходимости работник архива может удалять 
+					данные об альбомах.
+				</p>
+				<p>
+					Помимо действий с альбомами работники архива могут просматривать информацию о разработчиках предприятия, выбирая интересующий отдел.
+					Им доступна возможность добавлять новые данные, редактировать и удалять имеющиеся. В дальнейшем эта информация используется работниками архива для выдачи 
+					альбомов разработчикам.
+				</p>
+				<img src="../images/album-accounting/employee-list.png" class="img-fluid img-thumbnail" alt="Employee list">
+			</div>
+			
+			<div class="row mb-4">
+				<div class="col-4">
+					<img src="../images/album-accounting/add-album.png" class="img-fluid img-thumbnail" alt="Add album">
 				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="../images/album-accounting/add-album.png" class="img-fluid img-thumbnail">
+				<div class="col-4">
+					<img src="../images/album-accounting/add-album.png" class="img-fluid img-thumbnail" alt="Edit album">
+				</div>
+				<div class="col-4">
+					<img src="../images/album-accounting/edit-employee.png" class="img-fluid img-thumbnail" alt="Edit employee">
 				</div>
 			</div>
+
+			<h4>Профиль</h4>
+			<hr class="my-1">
 			<p class="text-justify">
-				&emsp;Помимо действий с альбомами работники архива могут просматривать информацию о разработчиках, выбирая интересующий отдел.
-				Также им доступна возможность добавлять, редактировать и удалять информацию о разработчиках. В дальнейшем эта информация используется для выдачи им альбомов. 
+				Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, а также сменить текущий пароль. 
 			</p>
-			<div class="row mb-3">
-				<div class="col-8">
-					<img src="../images/album-accounting/employee-list.png" class="img-fluid img-thumbnail">			
-				</div>
-				<div class="col-4 text-right">
-					<img src="../images/album-accounting/edit-employee.png" class="img-fluid img-thumbnail">
-				</div>
+			<img src="../images/album-accounting/profile.png" class="img-fluid img-thumbnail mb-4" alt="Profile">
+			
+			<h4>Задачи администраторов</h4>
+			<hr class="my-1">
+			
+			<div class="text-justify">
+				<p>
+					Администраторы имеют все возможности, перечисленные для работников архива. 
+					Кроме того одной из их задач является работа по вводу данных касательно отделов предприятия. 
+					Администраторы имеют возможность просматривать информацию об отделах, вносить в приложение данные о новых отделах, 
+					редактировать и удалять информацию об уже имеющихся.
+				</p>
+				<img src="../images/album-accounting/department-list.png" class="img-fluid img-thumbnail mb-3" alt="Department list">
+				
+				<p>
+					Однако основной задачей администраторов является менеджмент пользователей приложения.
+				</p>
+				<p>
+					Администраторы имеют возможность просматривать информацию о пользователях с опцией поиска по имени или 
+					адресу электронной почты.
+				</p>
+				<img src="../images/album-accounting/user-list.png" class="img-fluid img-thumbnail mb-3" alt="User list">
+				<p>
+					Они имеют право создавать новых пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся
+					пользователях, блокировать и удалять их учетные записи. Им доступна возможность изменять пароли пользователей, что удобно использовать, если пользователь 
+					не может вспомнить свой текущий пароль.
+				</p>
 			</div>
-			<p class="text-justify">
-				&emsp;<strong>Администраторы</strong> имеют все права работников архива. Таже им доступна возможность просматривать информацию 
-				о пользователях приложения с опцией поиска по имени/адресу эл. почты. Администраторы могут создавать новых пользователей, назначая им соответствующие права доступа,  
-				редактировать, блокировать и удалять уже имеющихся. Им доступна возможность изменять пароли пользователей, что удобно использовать, если пользователь не может 
-				вспомнить свой текущий пароль.
-			</p>
-			<div class="row mb-3">
-				<div class="col-8 mt-auto">
-					<img src="../images/album-accounting/user-list.png" class="img-fluid img-thumbnail">			
+			
+			<div class="row mb-4">
+				<div class="col-4">
+					<img src="../images/album-accounting/add-user.png" class="img-fluid img-thumbnail" alt="Add user">
 				</div>
-				<div class="col-4 text-right">
-					<img src="../images/album-accounting/add-user.png" class="img-fluid img-thumbnail">
+				<div class="col-4">
+					<img src="../images/album-accounting/add-user.png" class="img-fluid img-thumbnail" alt="Add user">
 				</div>
-			</div>
-			<p class="text-justify">
-				&emsp;Поимо вышеперечисленного администраторы имеют возможность просматривать информацию об отделах, создавать новые отделы, 
-				а также редактировать и удалять имеющиеся.
-			</p>
-			<div class="row mb-3">
-				<div class="col-8">
-					<img src="../images/album-accounting/department-list.png" class="img-fluid img-thumbnail">			
-				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="../images/album-accounting/edit-department.png" class="img-fluid img-thumbnail">
-				</div>
-			</div>
-			<p class="text-justify">
-				&emsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, а также сменить  пароль. 
-			</p>
-			<div class="row mb-2">
-				<div class="col-8">
-					<img src="../images/album-accounting/profile.png" class="img-fluid img-thumbnail">			
-				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="../images/album-accounting/change-password.png" class="img-fluid img-thumbnail">
+				<div class="col-4">
+					<img src="../images/album-accounting/edit-department.png" class="img-fluid img-thumbnail" alt="Edit department">
 				</div>
 			</div>
 		</div>
