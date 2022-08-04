@@ -1,100 +1,131 @@
-<html>
+<!doctype html>
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение составляет список ключевых навыков для указанной пользователем профессии."/>
-		<title>Skills Aggregator - Java Projects</title>
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
-		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
+		<meta name="description" content="Приложение составляет список необходимых ключевых навыков для указанной пользователем профессии."/>
+		<title>Агрегатор ключевых навыков - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project-page.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
-				<img src="img/skills-big.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Агрегатор ключевых навыков
-				<span class="h5 text-warning font-italic font-weight-bold">&nbsp;new version</span>
+		<div class="container">
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/skill-aggregator/skill-aggregator-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Skill Aggregator Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Агрегатор ключевых навыков</span>
 			</div>
 			
-			<div class="mb-3">
+			<div class="mb-4">
 				<a href="/skillaggregator" target="_blank">Протестировать приложение</a></br>
 				<a href="https://github.com/ishlyakhtenkov/skillaggregator">Source code на GitHub</a></br>
-				<a href="docker-compose-files/skillaggregator/docker-compose.yaml" download>Docker Compose file</a>
+				<a href="../docker-compose-files/skill-aggregator-new/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
 			
-			<div class="font-italic text-danger font-weight-bold text-justify mb-3">
-				&emsp;&nbsp;Это новая версия проекта. От <a href="skill-aggregator-old.html">старой версии</a>
-				она отличается использованием более современного стека технологий, а также работает непосредственно с API портала 
-				<a href="https://api.hh.ru/">Head Hunters Russia</a> через REST интерфейс. <a href="skill-aggregator-old.html">Старая версия</a> запрашивает веб-страницы портала, а затем 
-				распарсивает их с помощью библиотеки JSoup. Это гораздо медленнее подхода, используемого в новой версии, а также не всегда срабатывает, с тех пор как
-				Head Hunters стал использовать капчу.
+			<div class="text-justify">
+				<p class="lead">
+					Это новая версия проекта. От <a href="skill-aggregator-old.html">старой версии</a>
+					она отличается использованием более современного стека технологий, а также работает непосредственно с API портала 
+					<a href="https://api.hh.ru/">Head Hunters Russia</a> через REST интерфейс.
+				</p>
+				<p class="lead">
+					<a href="skill-aggregator-old.html">Старая версия</a> запрашивает веб-страницы портала, а затем распарсивает их с помощью библиотеки JSoup. 
+					Это гораздо медленнее подхода, используемого в новой версии, а также не всегда срабатывает, с тех пор как Head Hunters стал использовать капчу.
+				</p>
 			</div>
 			
-			<div class="h5 font-weight-bold">&emsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row align-items-center">
-								<div class="col-4">
-									<p>Maven</p>
-									<p>Spring Boot 2</p>
-								</div>
-								<div class="col-4">
-									<p>Spring Web</p>
-									<p>Spring Data JPA (Hibernate)</p>
-									<p>JUnit 5</p>
-								</div>
-								<div class="col-4">
-									<p>Thymeleaf</p>
-									<p>Bootstrap 4</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
-						
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<div class="row mb-3">
-				<div class="col-9 text-justify">
-					&emsp;Данное приложение составляет список ключевых навыков для указанной пользователем профессии.
-					Для каждого ключевого навыка указывается процент вакансий, требующих его знание, от общего числа проанализированных вакансий по указанной профессии.</br>
-					&emsp;Информация о вакансиях берется через API портала <a href="https://api.hh.ru/">Head Hunters Russia</a>.</br>				
-					&emsp;Пользователь вводит название интересующей его профессии, также он может ввести название города,
-					в котором необходимо осуществлять поиск вакансий. В случае если пользователь не ввел название города, поиск вакансий будет осуществляться
-					по всем городам России.</br>
-					&emsp;Доступна возможность выбрать какое количество вакансий 
-					(первые 100, 500 или 2000 из выборки <a href="https://hh.ru/">Head Hunters Russia</a>) необходимо проанализировать для сбора информации о 
-					требующихся ключевых навыках. Размер выборки влияет на время составления списка ключевых навыков.</br> 
-					&emsp;После анализа выборки вакансий пользователю представляется список ключевых навыков, 
-					требующихся для выбранной им профессии. Для каждого ключевого навыка из списка указывается процент вакансий, требующих его знание, 
-					от общего числа проанализированных вакансий по указанной профессии.</br>
-					&emsp;Результат агрегации ключевых навыков по указанной профессии за конкретную дату сохраняется в базу данных приложения.
+			<h3>Использованные технологии</h3>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">UX/UI</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring Boot 2</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>	
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+					</div>
 				</div>
-				<div class="col-3 mt-auto text-right">
-					<img src="img/skill-aggregator/profession-form.png" class="img-fluid img-thumbnail">
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-1">
+						<div class="col">
+							<p>Thymeleaf</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 4</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<img src="img/skill-aggregator/skills-page.png" class="img-fluid img-thumbnail mb-3">
+			
+			<h3>Описание приложения</h3>
+			<hr class="hr-bold my-3">
+			<div class="row row-cols-1 row-cols-xl-2">
+				<div class="col col-xl-9">
+					<div class="text-justify">
+						<p>
+							Данное приложение составляет список ключевых навыков для указанной пользователем профессии.<br>
+							Для каждого ключевого навыка указывается процент вакансий, требующих его знание, от общего числа проанализированных вакансий по указанной профессии.
+							Информация о вакансиях запрашивается через API портала <a href="https://api.hh.ru/">Head Hunters Russia</a>.
+						</p>
+						<p>
+							Пользователь вводит название интересующей его профессии, также он может ввести название города, в котором необходимо осуществлять поиск вакансий.
+							В случае если пользователь не ввел название города, поиск вакансий будет осуществляться по всем городам России.<br>
+							Доступна возможность выбрать какое количество вакансий (первые 100, 500 или 2000 из выборки <a href="https://hh.ru/">Head Hunters Russia</a>)
+							необходимо проанализировать для сбора информации о требующихся ключевых навыках. 
+							Размер выборки влияет на время составления списка ключевых навыков.
+						</p>
+						<img src="../images/skill-aggregator/choose-profession-new.png" class="img-fluid img-thumbnail d-xl-none" alt="Choose profession">
+						<p>
+							После анализа выборки вакансий пользователю представляется список ключевых навыков, 
+							требующихся для выбранной им профессии. Для каждого ключевого навыка из списка указывается процент вакансий, требующих его знание, 
+							от общего числа проанализированных вакансий по указанной профессии.</br>
+						</p>
+						<p>
+							Результат агрегации ключевых навыков по указанной профессии за конкретную дату сохраняется в базу данных приложения.
+						</p>
+					</div>
+				</div>
+				<div class="col col-xl-3 mt-2 text-right d-none d-xl-block">
+					<img src="../images/skill-aggregator/choose-profession-new.png" class="img-fluid img-thumbnail" alt="Choose profession">
+				</div>
+			</div>
+			<img src="../images/skill-aggregator/skill-result-new.png" class="img-fluid img-thumbnail mb-3" alt="Skill result">
 		</div> 
 		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
 	</body>
 </html>

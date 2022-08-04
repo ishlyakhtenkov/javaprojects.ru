@@ -1,88 +1,121 @@
-<html>
+<!doctype html>
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение позволяет проверить свои знания, пройдя тест по выбранной тематике."/>
-		<title>Online Testing - Java Projects</title>
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
-		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
+		<meta name="description" content="Приложение позволяет пользователям оценить свои знания, пройдя тест по выбранной тематике."/>
+		<title>Онлайн тестирование - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project-page.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
-				<img src="img/question-big.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Система онлайн тестирования
+		<div class="container">
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/online-testing/online-testing-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Online Testing Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Онлайн тестирование</span>
 			</div>
 			
-			<div class="mb-3">
+			<div class="mb-4">
 				<a href="/onlinetesting" target="_blank">Протестировать приложение</a></br>
 				<a href="https://github.com/ishlyakhtenkov/onlinetesting">Source code на GitHub</a></br>
-				<a href="docker-compose-files/onlinetesting/docker-compose.yaml" download>Docker Compose file</a>
+				<a href="../docker-compose-files/online-testing/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
 			
-			<div class="h5 font-weight-bold">&emsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-4">
-									<p>Maven</p>
-									<p>Spring Boot</p>
-								</div>
-								<div class="col-4">
-									<p>Spring MVC</p>
-									<p>Spring Data JPA (Hibernate)</p>
-								</div>
-								<div class="col-4">
-									<p>JUnit 5</p>
-									<p>Thymeleaf</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
-			
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<div class="row mb-3">
-				<div class="col-7 text-justify">
-					&emsp;Данное приложение позволяет пользователям проверить свои знания, пройдя онлайн тест по выбранной тематике.</br>
-					&emsp;Пользователю предлагается выбрать тему, по которой он хочет пройти тест, из списка имеющихся тем.</br>
-					&emsp;После выбора тематики теста начинается тестирование, где пользователю необходимо отвечать на предлагающиеся вопросы, выбирая правильный
-					ответ из представленного списка. В случае неверного ответа на вопрос информация об этом сохраняется.</br>
-					&emsp;Пользователь может в любой момент прервать прохождение теста и перейти к просмотру результатов, нажав кнопку "Interrupt test".
+			<h3>Использованные технологии</h3>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">UX/UI</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring Boot 2</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>	
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+					</div>
 				</div>
-				<div class="col-5 mt-auto text-right">
-					<img src="img/online-testing/select-category.png" class="img-fluid img-thumbnail">			
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-1">
+						<div class="col">
+							<p>Thymeleaf</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 5</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<img src="img/online-testing/question.png" class="img-fluid img-thumbnail mb-3">
-			<p class="text-justify">
-				&emsp;После ответов на все вопросы теста или досрочного завершения теста нажатием кнопки "Interrupt test"
-				приложение представляет пользователю результаты выполнения теста. В случае если пользователь давал неверные ответы, программа выводит список 
-				соответствующих вопросов, а также отображает правильные ответы на эти вопросы совместно с неправильными ответами, данными пользователем.
-			</p>
-			<img src="img/online-testing/result.png" class="img-fluid img-thumbnail mb-3">
+			
+			<h3>Описание приложения</h3>
+			<hr class="hr-bold my-3">
+			<div class="row row-cols-1 row-cols-xl-2">
+				<div class="col col-xl-7">
+					<div class="text-justify">
+						<p>
+							Данное приложение позволяет пользователям проверить свои знания, пройдя онлайн тест по выбранной тематике.
+						</p>
+						<img src="../images/online-testing/topics.png" class="img-fluid img-thumbnail d-xl-none" alt="Topics">
+						<p>
+							Пользователю предлагается выбрать тему, по которой он хочет пройти тест, из списка имеющихся тем.
+							После выбора тематики теста начинается тестирование, где пользователю необходимо отвечать на предлагающиеся вопросы, выбирая правильный
+							ответ из представленного списка. В случае неверного ответа на вопрос информация об этом сохраняется.
+						</p>
+						<p>
+							Пользователь может в любой момент прервать прохождение теста и перейти к просмотру результатов, нажав кнопку <q>Interrupt test</q>.
+						</p>
+					</div>
+				</div>
+				<div class="col col-xl-5 d-none d-xl-block mt-1 text-right">
+					<img src="../images/online-testing/topics.png" class="img-fluid img-thumbnail" alt="Topics">			
+				</div>
+			</div>
+			<img src="../images/online-testing/question.png" class="img-fluid img-thumbnail mb-3" alt="Question">
+			<div class="text-justify">
+				<p>
+					После ответов на все вопросы теста или досрочного завершения теста нажатием кнопки <q>Interrupt test</q>
+					приложение представляет пользователю результаты выполнения теста. 
+				</p>
+				<img src="../images/online-testing/result.png" class="img-fluid img-thumbnail mb-3" alt="Result">
+				<p>
+					В случае если пользователь давал неверные ответы, программа выводит список соответствующих вопросов, 
+					а также отображает правильные ответы на эти вопросы совместно с неправильными ответами, данными пользователем.
+				</p>
+			</div>
 		</div> 
 		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
 	</body>
 </html>
