@@ -1,119 +1,203 @@
-<html>
+<!doctype html>
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение позволяет пользователям управлять данными о приемах пищи и подсчитывать потребленные калории."/>
-		<title>Calories Management - Java Projects</title>
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
-		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
+		<meta name="description" content="Приложение позволяет пользователям вести подсчет потребляемых калорий с проверкой на превышение нормы."/>
+		<title>Менеджмент калорий - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project-page.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
-				<img src="img/meal-big.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Система подсчета калорий
+		<div class="container">
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/calories-management/calories-management-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Calories Management Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Менеджмент калорий</span>
 			</div>
 			
-			<div class="mb-3">
-				<a href="/calories-management" target="_blank">Протестировать приложение</a></br>
-				<a href="/calories-management/swagger-ui.html">REST API Swagger документация</a> (credentials: admin@gmail.com/admin)</br>
-				<a href="https://github.com/ishlyakhtenkov/caloriesmanagement">Source code на GitHub</a></br>
-				<a href="docker-compose-files/caloriesmanagement/docker-compose.yaml" download>Docker Compose file</a>
+			<div class="mb-4">
+				<a href="/calories-management" target="_blank">Протестировать приложение</a><br>
+				<a href="/calories-management/swagger-ui.html">REST API Swagger документация</a><br>
+				<a href="https://github.com/ishlyakhtenkov/caloriesmanagement">Source code на GitHub</a><br>
+				<a href="../docker-compose-files/calories-management/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
 			
-			<div class="h5 font-weight-bold">&emsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row align-items-center">
-								<div class="col-3">
-									<p>Maven</p>
-									<p>Spring MVC</p>
-									<p>Spring Security</p>
-									<p>REST (Jackson)</p>
-								</div>
-								<div class="col-3">
-									<p>JPA (Hibernate)</p>
-									<p>Spring Data JPA (Hibernate)</p>
-									<p>Spring Data JDBC</p>
-									<p>Ehcache</p>
-								</div>
-								<div class="col-3">
-									<p>JUnit 5</p>
-									<p>JSP</p>
-									<p>JSTL</p>
-									<p>jQuery + plugins</p>
-								</div>
-								<div class="col-3">
-									<p>DataTables</p>
-									<p>Bootstrap 4</p>
-									<p>OpenAPI 2</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
+			<h3>Использованные технологии</h3>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">UI</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JDBC</p>
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>Spring Security</p>
+						</div>
+						<div class="col">
+							<p>REST (Jackson)</p>
+						</div>
+						<div class="col">
+							<p>Ehcache</p>
+						</div>
+						<div class="col">
+							<p>OpenAPI 2</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+					</div>
+				</div>
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>JSP</p>
+						</div>
+						<div class="col">
+							<p>JSTL</p>
+						</div>
+						<div class="col">
+							<p>jQuery + plugins</p>
+						</div>
+						<div class="col">
+							<p>DataTables</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 4</p>
+						</div>
+					</div>
+				</div>
+			</div>
 			
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<p class="text-justify">
-				&emsp;Данное приложение позволяет пользователям вносить информацию об употребленной пище и количестве калорий, 
-				которое она содержит, а также следить за превышением заданной ежедневной нормы потребляемых калорий.</br>
-				&emsp;Взаимодействие с приложением осуществляется через UI (по AJAX) и по REST интерфейсу с базовой авторизацией, имеется поддержка интернационализации (русский/английский языки).<br>
-			</p>
-			<p class="text-justify">
-				&emsp;В приложении используется два вида пользователей: авторизованные пользователи и администраторы.</br>
-				&emsp;<strong>Анонимные пользователи</strong> могут зарегистрироваться, тем самым получая возможность работать с приложением.</br>
-			</p>
-			<img src="img/calories-management/register.png" class="img-fluid img-thumbnail mb-3">
-			<div class="row mb-3">
-				<div class="col-4 text-justify">
-					&emsp;<strong>Авторизованные пользователи</strong> могут просматривать информацию о своих приемах пищи
-					с возможностью фильтрации по датам и времени, добавлять новые приемы пищи, редактировать и удалять имеющиеся.</br>
-					&emsp;Цвет записи в таблице еды зависит от того, превышает ли сумма калорий за день установленную норму.</br>
-					<img src="img/calories-management/adding-meal.png" class="img-fluid img-thumbnail mt-1">
-				</div>
-				<div class="col-8 mt-auto">
-					<img src="img/calories-management/meals-table.png" class="img-fluid img-thumbnail">			
+			<h3>Описание приложения</h3>
+			<hr class="hr-bold my-3">
+			
+			<div class="text-justify">
+				<p>
+					Данное приложение позволяет пользователям вносить информацию об употребленной пище и количестве калорий, 
+					которое она содержит, а также следить за превышением заданной ежедневной нормы потребляемых калорий.
+				</p>
+				<p>
+					Взаимодействие с приложением осуществляется через UI (по AJAX) и по REST интерфейсу с базовой авторизацией, 
+					имеется поддержка интернационализации (русский/английский языки).
+				</p>
+				<p>
+					В приложении используется два вида пользовательских ролей: пользователи и администраторы. Каждой роли присущи свои выполняемые задачи.
+				</p>
+			</div>
+			
+			<h4>Регистрация, профиль</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Пользователи могут зарегистрироваться в приложении, заполнив данные об учетной записи на странице регистрации.
+				</p>
+				<img src="../images/calories-management/register.png" class="img-fluid img-thumbnail d-xl-none mb-3" alt="Register form">
+				<p>
+					Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, изменить имя, адрес электронной почты, 
+					ежедневную норму калорий, а также сменить текущий пароль. 
+				</p>
+				<img src="../images/calories-management/profile.png" class="img-fluid img-thumbnail d-xl-none mb-3" alt="Profile">
+				<div class="row">
+					<div class="col-6 d-none d-xl-block">
+						<img src="../images/calories-management/register.png" class="img-fluid img-thumbnail mb-3" alt="Register form">
+					</div>
+					<div class="col-6 d-none d-xl-block">
+						<img src="../images/calories-management/profile.png" class="img-fluid img-thumbnail mb-3" alt="Profile">
+					</div>				
 				</div>
 			</div>
-			<p class="text-justify">
-				&emsp;<strong>Администраторы</strong> имеют все возможности авторизованных пользователей. Таже им доступна возможность просматривать информацию 
-				о пользователях приложения. Администраторы могут создавать новых пользователей,	редактировать, блокировать и удалять уже имеющихся. 
-				Им доступна возможность изменять пароли пользователей, что удобно использовать, если пользователь не может вспомнить свой текущий пароль.
-			</p>
-			<div class="row mb-3">
-				<div class="col-8 mt-auto">
-					<img src="img/calories-management/users-table.png" class="img-fluid img-thumbnail">			
+			
+			<h4>Данные о еде</h4>
+			<hr class="my-1">
+			<div class="row row-cols-1 row-cols-xl-2 mb-xl-3">
+				<div class="col col-xl-4 text-justify">
+					<p>
+						Авторизованные пользователи могут просматривать информацию о своих приемах пищи
+						с возможностью фильтрации по датам и времени, добавлять новые приемы пищи, редактировать и удалять имеющиеся.
+					</p>
+					<img src="../images/calories-management/meal-list.png" class="img-fluid img-thumbnail d-xl-none mb-3" alt="Meal list">
+					<p>
+						Цвет записи в таблице еды зависит от того, превышает ли сумма калорий за день установленную норму.
+					</p>
+					<img src="../images/calories-management/add-meal.png" class="img-fluid img-thumbnail d-none d-xl-block" alt="Add meal">
 				</div>
-				<div class="col-4 text-right">
-					<img src="img/calories-management/adding-user.png" class="img-fluid img-thumbnail">
+				<div class="col col-xl-8 d-none d-xl-block mt-auto">
+					<img src="../images/calories-management/meal-list.png" class="img-fluid img-thumbnail" alt="Meal list">			
 				</div>
 			</div>
-			<p class="text-justify">
-				&emsp;Любому авторизованному пользователю приложения доступна возможность просмотреть и изменить данные своего профиля, а также сменить  пароль. 
-			</p>
-			<img src="img/calories-management/profile.png" class="img-fluid img-thumbnail mb-3">
+			<div class="row d-xl-none mb-3">
+					<div class="col-6">
+						<img src="../images/calories-management/add-meal.png" class="img-fluid img-thumbnail" alt="Add meal">
+					</div>
+					<div class="col-6 text-right">
+						<img src="../images/calories-management/edit-meal.png" class="img-fluid img-thumbnail" alt="Edit meal">
+					</div>
+			</div>
+			
+			<h4>Задачи администраторов</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Основной задачей администраторов является менеджмент пользователей приложения.
+				</p>
+				<p>
+					Они имеют право создавать новых пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся
+					пользователях, блокировать и удалять их учетные записи. Им доступна возможность изменять пароли пользователей, что удобно использовать, если пользователь 
+					не может вспомнить свой текущий пароль.
+				</p>
+				<div class="row">
+					<div class="col-8 mt-auto d-none d-xl-block mb-3">
+						<img src="../images/calories-management/user-list.png" class="img-fluid img-thumbnail" alt="User list">			
+					</div>
+					<div class="col-4 text-right d-none d-xl-block mb-3">
+						<img src="../images/calories-management/add-user.png" class="img-fluid img-thumbnail" alt="Add user">
+					</div>
+				</div>
+				<img src="../images/calories-management/user-list.png" class="img-fluid img-thumbnail d-xl-none" alt="User list">
+				<div class="row d-xl-none mt-3 mb-3">
+					<div class="col-6">
+						<img src="../images/calories-management/add-user.png" class="img-fluid img-thumbnail" alt="Add user">
+					</div>
+					<div class="col-6 text-right">
+						<img src="../images/calories-management/edit-user.png" class="img-fluid img-thumbnail" alt="Edit user">
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
 	</body>
 </html>
