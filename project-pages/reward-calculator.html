@@ -1,192 +1,276 @@
-<html>
+<!doctype html>
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение используется для калькуляции размеров ежемесячных премий работников."/>
-		<title>Reward Calculator - Java Projects</title>
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
-		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
+		<meta name="description" content="Приложение используется для калькуляции размеров ежемесячных премий работников предприятия."/>
+		<title>Калькулятор премий - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project-page.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
-				<img src="img/reward-big.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Система расчета премий работников
+		<div class="container">
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/reward-calculator/reward-calculator-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Reward Calculator Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Калькулятор премий</span>
 			</div>
 			
-			<div class="mb-3">
-				<a href="/reward-calculator" target="_blank">Протестировать приложение</a> (credentials: admin@gmail.com/admin)</br>
+			<div class="mb-4">
+				<a href="/reward-calculator" target="_blank">Протестировать приложение</a></br>
 				<a href="/rewardcalculator/swagger-ui.html">REST API Swagger документация</a></br>
 				<a href="https://github.com/ishlyakhtenkov/rewardcalculator">Source code на GitHub (backend)</a></br>
 				<a href="https://github.com/ishlyakhtenkov/angular-rewardcalculator">Source code на GitHub (frontend)</a></br>
-				<a href="docker-compose-files/rewardcalculator/docker-compose.yaml" download>Docker Compose file</a>
+				<a href="../docker-compose-files/reward-calculator/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
-							
-			<div class="h5 font-weight-bold">&emsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<thead class="thead-dark">
-					<tr align="center">
-						<th style="width: 75%">Backend</th>
-						<th style="width: 25%">Frontend</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row align-items-center">
-								<div class="col-4">
-									<p>Maven</p>
-									<p>Spring Boot 2</p>
-									<p>Spring MVC</p>
-									<p>Spring Data JPA (Hibernate)</p>
-								</div>
-								<div class="col-4">
-									<p>Spring Security</p>
-									<p>REST (Jackson)</p>
-									<p>JSON Web Token</p>
-									<p>JUnit 5</p>
-								</div>
-								<div class="col-4">
-									<p>OpenAPI 3</p>
-									<p>iText PDF</p>
-								</div>
-							</div>
-						</td>
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-12">
-									<p>Angular 2</p>
-									<p>Bootstrap 4</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
 			
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<p>
-				&emsp;Данное приложение применяется для калькуляции размеров ежемесячных премий работников отделов предприятия.
-			</p>
-			<p>
-				&emsp;В приложении используется четыре вида пользовательских ролей: экономисты, начальники отделов, кадровики и администраторы. Каждой роли присущи свои выполняемые задачи.
-			</p>
-			<div class="row mb-3">
-				<div class="col-8 mt-auto">
-					<div class="text-justify mb-2">
-						&emsp;Основной задачей <strong>экономистов</strong> является менеджмент платежных периодов и ежемесячных премий отделов.</br>
-						&emsp;Экономисты могут создавать, обновлять и удалять информацию о платежных периодах, которые характеризуются календарным месяцем и количеством
-						часов, которое необходимо отработать работникам предприятия в данном месяце.</br>
-						&emsp;Каждый месяц экономисты вносят в приложение данные касательно ежемесячного премирования отделов. 
-						Эти данные затем используются начальниками соответствующих отделов для распределения премии, выделенной отделу, между работниками данного отдела.</br> 
-						&emsp;Экономисты при необходимости могут обновлять и удалять	эти данные.	Однако, если начальник отдела уже распределил выделенную на его отдел премию, экономист не может изменить
-						данные о премии отдела таким образом, что выделенная сумма будет меньше распределенной.</br> 
-						&emsp;При удалении данных о ежемесячной премии отдела также удаляются данные о соответствующих премиях, распределенных между работниками отдела.
+			<h3>Использованные технологии</h3>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Frontend</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring Boot 2</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>Spring Security</p>
+						</div>
+						<div class="col">
+							<p>REST (Jackson)</p>
+						</div>
+						<div class="col">
+							<p>iText PDF</p>
+						</div>
+						<div class="col">
+							<p>OpenAPI 3</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+						<div class="col">
+							<p>JSON Web Token</p>
+						</div>
 					</div>
-					<img src="img/reward-calculator/payment_periods_list.png" class="img-fluid img-thumbnail mb-3">
-					<img src="img/reward-calculator/department_reward_list.png" class="img-fluid img-thumbnail mb-3">
 				</div>
-				<div class="col-4 text-right">
-					<img src="img/reward-calculator/add_payment_period.png" class="img-fluid img-thumbnail mb-4">
-					<img src="img/reward-calculator/edit_payment_period.png" class="img-fluid img-thumbnail mb-4">
-					<img src="img/reward-calculator/add_department_reward.png" class="img-fluid img-thumbnail mb-4">
-					<img src="img/reward-calculator/edit_department_reward.png" class="img-fluid img-thumbnail">
-				</div>
-			</div>
-			<p class="text-justify">
-				&emsp;В производственных целях экономисты также имеют доступ (только для чтения) к данным, касающимся информации об отделах, должностях и работниках предприятия.
-			</p>
-			<p class="text-justify">
-				&emsp;<strong>Начальники отделов</strong> выполняют задачи по распределению ежемесячных премий, выделяемых на их отдел между работниками отдела.</br> 
-				&emsp;Премия работника складывается из следующих частей: премия за отработанное время (рассчитывается автоматически на основе оклада работника и 
-				количества часов, отработанных им за текущий месяц), надбавка и штраф. Размеры надбавки и штрафа устанавливаются начальником отдела на основании производительности работника,
-				его заслуг в работе.
-			</p>
-			<p class="text-justify">
-				&emsp;При распределении ежемесячной премии между работниками не допускается превышать сумму выделенной на отдел премии.
-			</p>
-			<div class="row mb-3">
-				<div class="col-8">
-					<img src="img/reward-calculator/employee_reward_list.png" class="img-fluid img-thumbnail">			
-				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="img/reward-calculator/edit_employee_reward.png" class="img-fluid img-thumbnail">
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-1">
+						<div class="col">
+							<p>Angular 2</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 4</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<p class="text-justify">
-				&emsp;Закончив распределение премии между работниками, начальник отдела может скачать PDF файл, содержащий список работников для начисления премии в виде соответствующим
-				образом оформленной таблицы.
-			</p>
-			<img src="img/reward-calculator/employee_rewards_pdf.png" class="img-fluid img-thumbnail mb-3">
-			<p class="text-justify">
-				&emsp;Помимо права распределения премии отдела между работниками начальники отделов имеют возможность просматривать информацию об отделах, должностях и работниках, но только тех отделов,
-				которые относятся к их юрисдикции. Начальники отделов не имеют прав изменять, либо удалять данную информацию.</br>
-				&emsp;В производственных целях начальники отделов также имеют доступ (только для чтения) к информации о платежных периодах на предприятии.
-			</p>
+			
+			<h3>Описание приложения</h3>
+			<hr class="hr-bold my-3">
 			<div class="text-justify">
-				&emsp;<strong>Кадровики</strong> выполняют задачи, связанные с кадровой деятельностью на предприятии.</br>
-				&emsp;Им доступна возможность просматривать информацию обо всех отделах предприятия, вносить в приложение данные о новых отделах, а также при необходимости изменять 
-				и удалять информацию об уже имеющихся.</br> 
+				<p>
+					Данное приложение применяется для калькуляции размеров ежемесячных премий работников отделов предприятия.
+				</p>
+				<p>
+					В приложении используется четыре вида пользовательских ролей: экономисты, начальники отделов, кадровики и администраторы. 
+					Каждой роли присущи свои выполняемые задачи.
+				</p>
 			</div>
-			<div class="row mb-3">
-				<div class="col-8">
-					<div class="text-justify mb-1">
-						&emsp;Кадровики имеют доступ к информации обо всех должностях и работниках всех имеющихся отделов, имеют возможность создавать данные о новых должностях и работниках,
-						а также изменять и удалять информацию об уже имеющихся должностях и работниках.</br>
-						&emsp;В производственных целях кадровики также имеют доступ (только для чтения) к информации о платежных периодах на предприятии.
+			
+			<h4>Задачи экономистов</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<div class="row row-cols-1 row-cols-xl-2">
+					<div class="col-xl-8">
+						<p>
+							Основными задачами экономистов является менеджмент данных о платежных периодах и данных об ежемесячных премиях отделов.
+						</p>
+						<p>
+							Экономисты вносят в приложение информацию о платежных периодах, которая характеризуются календарным месяцем и количеством
+							часов, которое необходимо отработать работникам предприятия в данном месяце. При необходимости экономисты также могут корректировать или удалять эту информацию.
+						</p>
+						<img src="../images/reward-calculator/payment-period-list.png" class="img-fluid img-thumbnail d-xl-none mb-3" alt="Payment period list">
+						<p>
+							Ежемесячно экономисты вносят в приложение данные касательно премирования отделов в текущем платежном периоде. 
+							Эти данные затем используются начальниками соответствующих отделов для распределения премии, выделенной отделу, между работниками данного отдела.
+						</p>
+						<img src="../images/reward-calculator/department-reward-list.png" class="img-fluid img-thumbnail d-xl-none mb-3" alt="Department reward list">	
+						<p>
+							Экономисты при необходимости могут обновлять и удалять данные об ежемесячных премиях.	Однако, если начальник отдела уже распределил выделенную на его отдел премию, 
+							экономист не может изменить	данные о премии отдела таким образом, что выделенная сумма будет меньше распределенной.
+							При удалении данных о ежемесячной премии отдела также удаляются данные о соответствующих премиях, распределенных между работниками отдела.
+						</p>
+						<img src="../images/reward-calculator/payment-period-list.png" class="img-fluid img-thumbnail d-none d-xl-block mb-3" alt="Payment period list">
+						<img src="../images/reward-calculator/department-reward-list.png" class="img-fluid img-thumbnail d-none d-xl-block mb-3" alt="Department reward list">	
 					</div>
-					<img src="img/reward-calculator/department_list.png" class="img-fluid img-thumbnail mb-2">
-					<img src="img/reward-calculator/position_list.png" class="img-fluid img-thumbnail mb-2">
-					<img src="img/reward-calculator/employee_list.png" class="img-fluid img-thumbnail">					
-				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="img/reward-calculator/add_department.png" class="img-fluid img-thumbnail mb-3">
-					<img src="img/reward-calculator/add_position.png" class="img-fluid img-thumbnail mb-3">
-					<img src="img/reward-calculator/add_employee.png" class="img-fluid img-thumbnail">
-				</div>
-			</div>
-			<p class="text-justify">
-				&emsp;<strong>Администраторам</strong> доступны любые действия, которые можно выполнить в приложении, включая вышеописанные действия, доступные экономистам, начальникам отделов
-				и кадровикам.			
-			</p>
-			<div class="row mb-3">
-				<div class="col-8 mt-auto">
-					<div class="text-justify mb-2">
-						&emsp;Но основной задачей администраторов является менеджмент пользователей приложения.</br>
-						&emsp;Администраторы имеют возможность просматривать информацию о пользователях приложения с опцией поиска по имени/адресу электронной почты. Они имеют право создавать новых
-						пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся пользователях, удалять, а также блокировать их учетные записи.</br>
-						&emsp;В случае, если пользователь забыл свой пароль, у администратора есть возможность сменить пароль пользователя на новый.
+					<div class="col-xl-4 d-none d-xl-block text-right mt-2">
+						<img src="../images/reward-calculator/add-payment-period.png" class="img-fluid img-thumbnail mb-4" alt="Add payment period">
+						<img src="../images/reward-calculator/edit-payment-period.png" class="img-fluid img-thumbnail mb-4" alt="Edit payment period">
+						<img src="../images/reward-calculator/add-department-reward.png" class="img-fluid img-thumbnail mb-4" alt="Add department reward">
+						<img src="../images/reward-calculator/edit-department-reward.png" class="img-fluid img-thumbnail" alt="Edit department reward">
 					</div>
-					<img src="img/reward-calculator/user_list.png" class="img-fluid img-thumbnail mb-2">
 				</div>
-				<div class="col-4 text-right">
-					<img src="img/reward-calculator/add_user.png" class="img-fluid img-thumbnail">
+				<div class="row d-xl-none">
+					<div class="col-6">
+						<img src="../images/reward-calculator/add-department-reward.png" class="img-fluid img-thumbnail mb-3" alt="Add department reward">
+						<img src="../images/reward-calculator/edit-department-reward.png" class="img-fluid img-thumbnail" alt="Edit department reward">
+					</div>
+					<div class="col-6 text-right">
+						<img src="../images/reward-calculator/add-payment-period.png" class="img-fluid img-thumbnail mb-3" alt="Add payment period">
+						<img src="../images/reward-calculator/edit-payment-period.png" class="img-fluid img-thumbnail" alt="Edit payment period">
+					</div>
+				</div>
+				<p>
+					В производственных целях экономисты также имеют доступ (только для чтения) к данным, касающимся информации об отделах, должностях и работниках предприятия.
+				</p>
+			</div>
+
+			<h4>Начальники отделов</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Начальники отделов выполняют задачи по распределению ежемесячных премий, выделяемых на их отдел, между работниками отдела. 
+				</p>
+				<img src="../images/reward-calculator/employee-reward-list.png" class="img-fluid img-thumbnail d-md-none mb-3" alt="Employee reward list">
+				<p>
+					Премия работника складывается из следующих частей: премия за отработанное время (рассчитывается автоматически на основе оклада работника и 
+					количества часов, отработанных им за текущий месяц), надбавка и штраф. Размеры надбавки и штрафа устанавливаются начальником отдела на основании 
+					производительности труда работника и его заслуг в работе.
+				</p>
+				<img src="../images/reward-calculator/edit-employee-reward-sm.png" class="img-fluid img-thumbnail d-md-none mb-3" alt="Edit employee reward">
+				<p>
+					При распределении ежемесячной премии между работниками не допускается превышать сумму выделенной на отдел премии.
+				</p>
+				<div class="row">
+					<div class="col-8 d-none d-md-block mb-3">
+						<img src="../images/reward-calculator/employee-reward-list.png" class="img-fluid img-thumbnail" alt="Employee reward list">			
+					</div>
+					<div class="col-4 d-none d-md-block text-right mt-auto mb-3">
+						<img src="../images/reward-calculator/edit-employee-reward.png" class="img-fluid img-thumbnail" alt="Edit employee reward">
+					</div>
+				</div>
+				<p>
+					Закончив распределение премии между работниками, начальник отдела может скачать PDF файл, содержащий список работников для начисления премии в виде 
+					соответствующим	образом оформленной таблицы.
+				</p>
+				<img src="../images/reward-calculator/employee-rewards-table.png" class="img-fluid img-thumbnail mb-3" alt="Employee rewards table">
+				<p>
+					Помимо права распределения премии отдела между работниками начальники отделов имеют возможность просматривать информацию об отделах, должностях
+					и работниках, но только тех отделов, которые относятся к их юрисдикции. Начальники отделов не имеют прав изменять, либо удалять данную информацию.
+				</p>
+				<p>
+					В производственных целях начальники отделов также имеют доступ (только для чтения) к информации о платежных периодах на предприятии.
+				</p>
+			</div>
+			
+			<h4>Задачи кадровиков</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<div class="row mb-3">
+					<div class="col-xl-8">
+						<p>
+							Кадровики выполняют в приложении работу, связанную с кадровой деятельностью на предприятии.
+						</p>
+						<p>
+							Их главной задачей является менеджмент данных касательно отделов, должностей и работников предприятия.
+							Кадровики могут просматривать, изменять и при необходимости удалять данную информацию.
+						</p>
+						<img src="../images/reward-calculator/department-list.png" class="img-fluid img-thumbnail mb-3" alt="Department list">
+						<img src="../images/reward-calculator/position-list.png" class="img-fluid img-thumbnail mb-3" alt="Position list">
+						<img src="../images/reward-calculator/employee-list.png" class="img-fluid img-thumbnail" alt="Employee list">					
+					</div>
+					<div class="col-xl-4 d-none d-xl-block text-right mt-2">
+						<img src="../images/reward-calculator/add-department.png" class="img-fluid img-thumbnail mb-4" alt="Add department">
+						<img src="../images/reward-calculator/add-position.png" class="img-fluid img-thumbnail mb-4" alt="Add position">
+						<img src="../images/reward-calculator/add-employee.png" class="img-fluid img-thumbnail" alt="Add employee">
+					</div>
+				</div>
+				<div class="row d-xl-none mb-3">
+					<div class="col-6">
+						<img src="../images/reward-calculator/add-department.png" class="img-fluid img-thumbnail mb-3" alt="Add department">
+						<img src="../images/reward-calculator/add-position.png" class="img-fluid img-thumbnail" alt="Add position">
+					</div>
+					<div class="col-6 text-right">
+						<img src="../images/reward-calculator/add-employee.png" class="img-fluid img-thumbnail mb-3" alt="Add employee">
+						<img src="../images/reward-calculator/edit-department.png" class="img-fluid img-thumbnail" alt="Edit department">
+					</div>
+				</div>
+				<p>
+					В производственных целях кадровики также имеют доступ (только для чтения) к информации о платежных периодах на предприятии.
+				</p>
+			</div>
+			
+			<h4>Профиль</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, а также сменить текущий пароль.
+				</p>
+				<div class="row mb-3">
+					<div class="col-md-8">
+						<img src="../images/reward-calculator/profile.png" class="img-fluid img-thumbnail" alt="Profile">			
+					</div>
+					<div class="col-4 text-right d-none d-md-block mt-auto">
+						<img src="../images/reward-calculator/change-password-user.png" class="img-fluid img-thumbnail">
+					</div>
 				</div>
 			</div>
-			<p>
-				&emsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, а также сменить текущий пароль. 
-			</p>
-			<div class="row mb-2">
-				<div class="col-8">
-					<img src="img/reward-calculator/profile.png" class="img-fluid img-thumbnail">			
-				</div>
-				<div class="col-4 text-right mt-auto">
-					<img src="img/reward-calculator/profile_change_password.png" class="img-fluid img-thumbnail">
+			
+			<h4>Задачи администраторов</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p class="text-justify">
+					Администраторам приложения доступны все вышеописанные действия, доступные экономистам, начальникам отделов и кадровикам.
+					Но их основной задачей является менеджмент пользователей приложения.
+				</p>
+				<img src="../images/reward-calculator/user-list.png" class="img-fluid d-xl-none img-thumbnail mb-3" alt="User list">
+				<div class="row mb-4">
+					<div class="col-xl-8">
+						<p>
+							Администраторы имеют возможность просматривать информацию о пользователях приложения с опцией поиска по имени/адресу электронной почты. 
+							Они имеют право создавать новых	пользователей, назначая им соответствующие права доступа, редактировать информацию об уже имеющихся 
+							пользователях, удалять, а также блокировать их учетные записи.
+						</p>
+						<div class="row d-xl-none">
+							<div class="col-6">
+								<img src="../images/reward-calculator/add-user.png" class="img-fluid img-thumbnail mb-3" alt="Add user">
+							</div>
+							<div class="col-6 text-right">
+								<img src="../images/reward-calculator/edit-user.png" class="img-fluid img-thumbnail mb-3" alt="Edit user">
+							</div>
+						</div>
+						<p>
+							В случае, если пользователь забыл свой пароль, у администратора есть возможность сменить пароль пользователя на новый.
+						</p>
+						<img src="../images/reward-calculator/user-list.png" class="img-fluid d-none d-xl-block img-thumbnail mb-2" alt="User list">
+					</div>
+					<div class="col-xl-4 mt-2 d-none d-xl-block text-right">
+						<img src="../images/reward-calculator/add-user.png" class="img-fluid img-thumbnail" alt="Add user">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -194,5 +278,10 @@
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
 	</body>
 </html>
