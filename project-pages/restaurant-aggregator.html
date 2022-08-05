@@ -1,130 +1,175 @@
-<html>
+<!doctype html>
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="Данное приложение позволяет пользователям ежедневно голосовать за понравившийся ресторан."/>
-		<title>Restaurant Voting - Java Projects</title>
-		
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/all.css">
-		<link rel="stylesheet" type="text/css" href="css/screen.css"/>
-		<link rel="icon" href="https://javaprojects.ru/favicon.ico" type="image/x-icon">
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/popper.min.js"></script>	
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/include.js"></script>
-		<script src="js/about.js"></script>
+		<meta name="description" content="Приложение предлагает пользователям получить информацию о ресторанах и проголосовать за понравившийся."/>
+		<title>Ресторанный агрегатор - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project-page.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="sticky-top">
+		<div class="fixed-top">
 			<div id="navbarContent"></div>
 		</div>
-		
-		<div id="aboutContent"></div>
 				
-		<div class="container mt-4">
-			<div class="h1 p-3 bg-secondary text-white font-weight-bold mb-3 rounded">
-				<img src="img/votingsystem.png" width="40" height="40" class="d-inline-block mb-2 ml-2" alt="">
-				Система голосования за рестораны
+		<div class="container">
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/restaurant-aggregator/restaurant-aggregator-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Restaurant Aggregator Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Ресторанный агрегатор</span>
+			</div>
+
+			<div class="mb-4">
+				<a href="/restaurant-voting" target="_blank">Протестировать приложение</a><br>
+				<a href="/votingsystem/swagger-ui.html">REST API Swagger документация</a><br>
+				<a href="https://github.com/ishlyakhtenkov/votingsystem">Source code на GitHub (backend)</a><br>
+				<a href="https://github.com/ishlyakhtenkov/angular-votingsystem">Source code на GitHub (frontend)</a><br>
+				<a href="../docker-compose-files/restaurant-aggregator/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
 			
-			<div class="mb-3">
-				<a href="/restaurant-voting" target="_blank">Протестировать приложение</a> (credentials: admin@gmail.com/admin)</br>
-				<a href="/votingsystem/swagger-ui.html">REST API Swagger документация</a></br>
-				<a href="https://github.com/ishlyakhtenkov/votingsystem">Source code на GitHub (backend)</a></br>
-				<a href="https://github.com/ishlyakhtenkov/angular-votingsystem">Source code на GitHub (frontend)</a></br>
-				<a href="docker-compose-files/votingsystem/docker-compose.yaml" download>Docker Compose file</a>
-			</div>
-			
-			<div class="h5 font-weight-bold">&emsp;Использованные технологии</div>
-			<table class="table table-bordered">
-				<thead class="thead-dark">
-					<tr align="center">
-						<th style="width: 75%">Backend</th>
-						<th style="width: 25%">Frontend</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr align="center">
-						<td class="align-middle">
-							<div class="row align-items-center">
-								<div class="col-4">
-									<p>Maven</p>
-									<p>Spring MVC</p>
-									<p>Spring Data JPA (Hibernate)</p>
-								</div>
-								<div class="col-4">
-									<p>Spring Security</p>
-									<p>Ehcache</p>
-									<p>REST (Jackson)</p>
-								</div>
-								<div class="col-4">
-									<p>JUnit 5</p>
-									<p>OpenAPI 2</p>
-								</div>
-							</div>
-						</td>
-						<td class="align-middle">
-							<div class="row">
-								<div class="col-12">
-									<p>Angular 2</p>
-									<p>Bootstrap 4</p>
-								</div>
-							</div>
-						</td>
-					</tr>
-				</tbody>				
-			</table>
-			
-			<div class="h5 font-weight-bold">&emsp;Описание приложения</div>
-			<p class="text-justify">
-				&emsp;Данное приложение позволяет пользователям получать информацию о ресторанах и предлагающихся в них ланч-меню дня, а также
-				один раз в сутки голосовать за понравившийся ресторан.</br>
-			</p>
-			<p class="text-justify">
-				&emsp;В приложении используется три вида пользователей: анонимные пользователи, авторизованные пользователи и администраторы.</br>
-				&emsp;<strong>Анонимные пользователи</strong> могут получать информацию о занесенных в приложение ресторанах,
-				просматривать их ланч-меню дня, а также осуществлять поиск ресторанов по имени.</br>
-			</p>
-			<img src="img/restaurant-voting/anonimous-restaurants.png" class="img-fluid img-thumbnail mb-3">
-			<div class="row mb-3">
-				<div class="col-8 mt-auto">
-					<img src="img/restaurant-voting/anonimous-restaurant-details.png" class="img-fluid img-thumbnail">			
-				</div>
-				<div class="col-4">
-					<div class="text-justify mb-1">
-						Кроме того анонимные пользователи могут зарегистрироваться в приложении, тем самым получая возможность голосовать за понравившийся ресторан.
+			<h3>Использованные технологии</h3>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Backend</button>
+			    </li>
+			    <li class="nav-item" role="presentation">
+				    <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Frontend</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Spring MVC</p>
+						</div>
+						<div class="col">
+							<p>Spring Data JPA</p>
+						</div>
+						<div class="col">
+							<p>Hibernate</p>
+						</div>
+						<div class="col">
+							<p>Spring Security</p>
+						</div>
+						<div class="col">
+							<p>REST (Jackson)</p>
+						</div>
+						<div class="col">
+							<p>OpenAPI 2</p>
+						</div>
+						<div class="col">
+							<p>Ehcache</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
 					</div>
-					<img src="img/restaurant-voting/register.png" class="img-fluid img-thumbnail">
+				</div>
+			    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+					<div class="row row-cols-1">
+						<div class="col">
+							<p>Angular 2</p>
+						</div>
+						<div class="col">
+							<p>Bootstrap 4</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<p class="text-justify">
-				&emsp;<strong>Авторизованные пользователи</strong> помимо возможности просмотра информации о ресторанах и их ланч-меню дня
-				могут проголосовать за понравившийся ресторан. Голосовать можно за один ресторан один раз в сутки, до 11:00 доступна возможность изменить голос, проголосовав за другой ресторан.
-			</p>
-			<img src="img/restaurant-voting/voting.png" class="img-fluid img-thumbnail mb-3">
-			<p class="text-justify">
-				&emsp;<strong>Администраторы</strong> имеют все возможности авторизованных пользователей. Также им доступна возможность создавать 
-				новые рестораны, редактировать информацию об уже имеющихся, удалять рестораны.
-			</p>
-			<img src="img/restaurant-voting/add-restaurant.png" class="img-fluid img-thumbnail mb-3">
-			<p class="text-justify">
-				Администраторы ежедневно добавляют новые ланч-меню дня для имеющихся ресторанов. Также они могут изменять/удалять блюда в ланч-меню.
-			</p>
-			<img src="img/restaurant-voting/add-dishes.png" class="img-fluid img-thumbnail mb-3">
-			<p class="text-justify">
-				После создания ланч-меню дня для ресторана, пользователи смогут проголосовать за него.
-			</p>
-			<img src="img/restaurant-voting/menu-created.png" class="img-fluid img-thumbnail mb-3">
-			<p class="text-justify">
-				&emsp;Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, сменить  пароль, а также удалить свой профиль.
-			</p>
-			<img src="img/restaurant-voting/profile.png" class="img-fluid img-thumbnail mb-3">
+
+			<h3>Описание приложения</h3>
+			<hr class="hr-bold my-3">
+			<div class="text-justify">
+				<p>
+					Данное приложение позволяет пользователям получать информацию о ресторанах и предлагающихся в них ланч-меню дня, а также
+					один раз в сутки голосовать за понравившийся ресторан.
+				</p>
+				<p>
+					В приложении используется два вида пользовательских ролей: пользователи и администраторы. Каждой роли присущи свои выполняемые задачи.
+				</p>
+			</div>
+			
+			<h4>Регистрация, профиль</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Пользователи могут зарегистрироваться в приложении, заполнив данные об учетной записи на странице регистрации.
+				</p>
+				<img src="../images/restaurant-aggregator/register.png" class="img-fluid w-100 img-thumbnail d-xl-none mb-3" alt="Register form">
+				<p class="d-xl-none">
+					Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, изменить имя, адрес электронной почты, 
+					а также сменить текущий пароль. 
+				</p>
+				<img src="../images/restaurant-aggregator/profile.png" class="img-fluid img-thumbnail d-xl-none mb-3" alt="Profile">
+				<div class="row">
+					<div class="col-4 d-none d-xl-block">
+						<img src="../images/restaurant-aggregator/register.png" class="img-fluid img-thumbnail mb-3" alt="Register form">
+						<p>
+							Любому авторизованному пользователю приложения доступна возможность просмотреть свой профиль, изменить имя, адрес электронной почты, 
+							а также сменить текущий пароль. 
+						</p>
+					</div>
+					<div class="col-8 d-none d-xl-block">
+						<img src="../images/restaurant-aggregator/profile.png" class="img-fluid img-thumbnail mb-3" alt="Profile">
+					</div>				
+				</div>
+				<p>
+					При желании пользователь имеет право удалить свою учетную запись.
+				</p>
+			</div>
+			
+			<h4>Рестораны</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<p>
+					Анонимные пользователи могут просматривать информацию о ресторанах и их ланч-меню дня. Поддерживается поиск ресторана по имени.
+				</p>
+				<img src="../images/restaurant-aggregator/restaurant-list.png" class="img-fluid img-thumbnail mb-3" alt="Restaurant list">
+				<p>
+					Авторизовавшимся пользователям доступна возможность проголосовать за понравившийся ресторан.<br> 
+					Отдать голос можно только за один ресторан и один раз в сутки. До 11:00 доступна возможность изменить выбор, проголосовав за другой ресторан.
+				</p>
+				<img src="../images/restaurant-aggregator/make-vote.png" class="img-fluid img-thumbnail mb-3" alt="Make vote">
+			</div>
+			
+			<h4>Задачи администраторов</h4>
+			<hr class="my-1">
+			<div class="text-justify">
+				<div class="row row-cols-1 row-cols-xl-2">
+					<div class="col">
+						<p>
+							Основной задачей администраторов является менеджмент данных ресторанов.
+						</p>
+						<p>
+							Администраторы могут создавать новые рестораны, а также редактировать и удалять информацию об уже имеющихся.
+						</p>
+						<img src="../images/restaurant-aggregator/add-restaurant.png" class="img-fluid w-100 img-thumbnail d-xl-none mb-3" alt="Add restaurant">
+						<p>
+							Ежедневно администраторы добавляют для ресторанов информацию об их предлагаемом сегодня ланч-меню.<br>
+							После создания ланч-меню дня для ресторана, у пользователей появляется возможность голосовать за него.
+						</p>
+					</div>
+					<div class="col d-none d-xl-block">
+						<img src="../images/restaurant-aggregator/add-restaurant.png" class="img-fluid img-thumbnail mt-2" alt="Add restaurant">
+					</div>
+				</div>
+			</div>
+			<img src="../images/restaurant-aggregator/add-dish.png" class="img-fluid img-thumbnail mb-4" alt="Add dish">
 		</div>
 		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
 	</body>
 </html>
