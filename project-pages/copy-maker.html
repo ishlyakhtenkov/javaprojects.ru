@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Приложение создает копии электронных документов, анализируя выбранные накладные и описи документации."/>
+		<title>Копировщик документов - Java Projects</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/logo-ref.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/project-page.css"/>
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	</head>
+	<body class="d-flex flex-column min-vh-100">
+		<div class="fixed-top">
+			<div id="navbarContent"></div>
+		</div>
+				
+		<div class="container">
+			<div class="row bg-secondary text-white ml-0 mr-0 mb-4 pt-2 rounded">
+				<img src="../images/copy-maker/copy-maker-logo-big.png" width="40" height="40" class="mb-3 ml-3 mt-md-1" alt="Copy Maker Logo">
+				<span class="font-weight-bold ml-3 mt-2 mt-md-0 mb-md-2 my-h1">Копировщик документов</span>
+			</div>
+			
+			<div class="mb-4">
+				<a href="https://github.com/ishlyakhtenkov/doccopymaker">Source code на GitHub</a>
+			</div>
+			
+			<h3>Использованные технологии</h3>
+			<hr class="hr-bold my-3">
+			<ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+				<li class="nav-item" role="presentation">
+				    <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Desktop app</button>
+			    </li>
+			</ul>
+			<div class="tab-content mb-3 ml-3" id="myTabContent">
+			    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+					<div class="row row-cols-2 row-cols-md-2 row-cols-lg-4">
+						<div class="col">
+							<p>Maven</p>
+						</div>
+						<div class="col">
+							<p>Apache POI</p>
+						</div>
+						<div class="col">
+							<p>Swing</p>
+						</div>
+						<div class="col">
+							<p>JUnit 5</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<h3>Описание приложения</h3>
+			<hr class="hr-bold my-3">
+			<div class="text-justify">
+				<p>
+					Данное приложение используется работниками бюро учета для создания копий электронных документов, перечисленных в накладной, описи
+					извещений или простой таблице (далее - накладная), с целью их последующей записи на компакт-диск и отправки другим предприятиям.
+				</p>
+				<div class="row row-col-1 row-col-md-2 mb-3">
+					<div class="col-md-6">
+						<img src="../images/copy-maker/docs-cnote.png" class="img-fluid img-thumbnail" alt="Document consignment note">
+					</div>
+					<div class="col-md-6">
+						<img src="../images/copy-maker/change-notice-cnote.png" class="img-fluid img-thumbnail" alt="Change notice consignment note">
+					</div>
+				</div>
+				<p>
+					Пользователь выбирает накладную, содержащую перечень децимальных номеров конструкторских документов, а также указывает директорию, куда будут
+					записываться копии электронных документов. В случае, если пользователь выбрал неподдерживаемый тип документа, программа выдает соответствующее
+					предупреждение.
+				</p>
+				<div class="row row-col-1 row-col-md-2 mb-3">
+					<div class="col-md-6">
+						<img src="../images/copy-maker/main-window.png" class="img-fluid img-thumbnail" alt="Main window">
+					</div>
+					<div class="col-md-6">
+						<img src="../images/copy-maker/invalid-doc-type.png" class="img-fluid img-thumbnail" alt="Invalid doc type">
+					</div>
+				</div>
+				<p>
+					Приложение анализирует выбранную пользователем накладную на наличие в ней децимальных номеров, соответствующих электронным документам. 
+					В случае отсутствия таковых программа выдает соответствующее предупреждение.
+				</p>
+				<p>
+					При наличии в накладной децимальных номеров, соответствующих электронным документам, программа посредством
+					специально разработанного алгоритма определяет на основе децимальных номеров местонахождение этих документов в электронном архиве предприятия, 
+					после чего для каждого электронного документа создает в целевой директории копии всех файлов, входящих в его состав.
+				</p>
+				<p>
+					Пользователь следит за ходом процесса в соответствующем окне программы. В случае, если программе не
+					удается найти в архиве требующийся электронный документ, в данном окне выводится соответствующая информация.
+				</p>
+				<p>
+					По завершению работы программа предоставляет пользователю результирующую сводку, в которой указывается количество скопированных
+					документов, их децимальные номера, а также сведения о произошедших ошибках, если такие возникали.
+				</p>
+				<div class="row row-col-1 row-col-md-2 mb-4">
+					<div class="col-md-6">
+						<img src="../images/copy-maker/result-without-errors.png" class="img-fluid img-thumbnail" alt="Result without errors">
+					</div>
+					<div class="col-md-6">
+						<img src="../images/copy-maker/result-with-errors.png" class="img-fluid img-thumbnail" alt="Result with errors">
+					</div>
+				</div>
+			</div>
+		</div> 
+		
+		<footer class="mt-auto text-lg-start">
+			<div id="footerContent"></div>		
+		</footer>
+		
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/popper.min.js"></script>	
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/load-fragments.js"></script>
+	</body>
+</html>
