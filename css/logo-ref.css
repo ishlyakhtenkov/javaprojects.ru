@@ -22,49 +22,49 @@ a[href$=".yaml"]{
     background: url(../images/shared/docker-logo.png) no-repeat center left;
 }
 
-a[href^="/skillsaggregator"]{
+span a[href^="/skillsaggregator"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/skill-aggregator/skill-aggregator-logo.png) no-repeat center left;
 }
 
-a[href^="/skillaggregator"]{
+span a[href^="/skillaggregator"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/skill-aggregator/skill-aggregator-logo.png) no-repeat center left;
 }
 
-a[href^="/restaurant-voting"]{
+span a[href^="/restaurant-voting"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/restaurant-aggregator/restaurant-aggregator-logo.png) no-repeat center left;
 }
 
-a[href^="/reward-calculator"]{
+span a[href^="/reward-calculator"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/reward-calculator/reward-calculator-logo.png) no-repeat center left;
 }
 
-a[href^="/onlinetesting"]{
+span a[href^="/onlinetesting"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/online-testing/online-testing-logo.png) no-repeat center left;
 }
 
-a[href^="/calories-management"]{
+span a[href^="/calories-management"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/calories-management/calories-management-logo.png) no-repeat center left;
 }
 
-a[href$="/album-accounting"]{
+span a[href$="/album-accounting"]{
     padding-left: 20px;
 	padding-bottom: 1px;
     background: url(../images/album-accounting/album-accounting-logo.png) no-repeat center left;
 }
 
-a[href$=":4201"]{
+span a[href$=":4201"]{
     padding-left: 20px;
 	padding-bottom: 2px;
     background: url(../images/energy-balance-control/energy-balance-control-logo.png) no-repeat center left;

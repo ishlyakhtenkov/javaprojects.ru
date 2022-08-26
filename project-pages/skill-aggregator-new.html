@@ -24,7 +24,7 @@
 			<img src="../images/skill-aggregator/new-version-logo.png" class="float-right d-none d-md-block mt-n3" alt="New version logo">
 			
 			<div class="mb-4">
-				<a href="/skillaggregator" target="_blank">Протестировать приложение</a><br>
+				<span><a href="/skillaggregator" target="_blank">Протестировать приложение</a></span><br>
 				<a href="https://github.com/ishlyakhtenkov/skillaggregator">Source code на GitHub</a><br>
 				<a href="../docker-compose-files/skill-aggregator-new/docker-compose.yaml" download>Docker Compose file</a>
 			</div>
@@ -128,6 +128,23 @@
 			<img src="../images/skill-aggregator/skill-result-new.png" class="img-fluid img-thumbnail mb-4" alt="Skill result">
 		</div> 
 		
+		<div class="modal fade" tabindex="-1" role="dialog" id="testRequestModal">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title">Хотите протестировать данный проект прямо сейчас?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-footer">
+				<a href="/skillaggregator" target="_blank" class="btn btn-primary" onclick="closeTestRequestModal()">Протестировать</a><br>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Не сейчас</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
@@ -136,5 +153,6 @@
 		<script src="../js/popper.min.js"></script>	
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/load-fragments.js"></script>
+		<script src="../js/show-test-request-modal.js"></script>
 	</body>
 </html>

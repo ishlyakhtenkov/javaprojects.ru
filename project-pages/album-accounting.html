@@ -22,7 +22,7 @@
 			</div>
 			
 			<div class="mb-4">
-				<a href="/album-accounting" target="_blank">Протестировать приложение</a><br>
+				<span><a href="/album-accounting" target="_blank">Протестировать приложение</a><span><br>
 				<a href="/albumaccounting/swagger-ui.html">REST API Swagger документация</a><br>
 				<a href="https://github.com/ishlyakhtenkov/albumaccounting">Source code на GitHub (backend)</a><br>
 				<a href="https://github.com/ishlyakhtenkov/angular-albumaccounting">Source code на GitHub (frontend)</a><br>
@@ -227,6 +227,23 @@
 			</div>
 		</div>
 		
+		<div class="modal fade" tabindex="-1" role="dialog" id="testRequestModal">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title">Хотите протестировать данный проект прямо сейчас?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-footer">
+				<a href="/album-accounting" target="_blank" class="btn btn-primary" onclick="closeTestRequestModal()">Протестировать</a><br>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Не сейчас</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
 		<footer class="mt-auto text-lg-start">
 			<div id="footerContent"></div>		
 		</footer>
@@ -235,5 +252,6 @@
 		<script src="../js/popper.min.js"></script>	
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/load-fragments.js"></script>
+		<script src="../js/show-test-request-modal.js"></script>
 	</body>
 </html>
